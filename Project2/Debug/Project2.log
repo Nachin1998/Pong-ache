@@ -1,0 +1,20 @@
+﻿  Source.cpp
+d:\desarrollo i\project2\project2\source.cpp(56): warning C4013: 'juego' sin definir; se supone que extern devuelve como resultado int
+d:\desarrollo i\project2\project2\source.cpp(122): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+d:\desarrollo i\project2\project2\source.cpp(123): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+d:\desarrollo i\project2\project2\source.cpp(126): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+d:\desarrollo i\project2\project2\source.cpp(127): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+d:\desarrollo i\project2\project2\source.cpp(153): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+d:\desarrollo i\project2\project2\source.cpp(163): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+d:\desarrollo i\project2\project2\source.cpp(167): warning C4553: "==": el resultado de la expresión no se usa. ¿Quiso decir "="?
+d:\desarrollo i\project2\project2\source.cpp(168): warning C4553: "==": el resultado de la expresión no se usa. ¿Quiso decir "="?
+d:\desarrollo i\project2\project2\source.cpp(227): warning C4244: 'función': conversión de 'int' a 'float'; posible pérdida de datos
+d:\desarrollo i\project2\project2\source.cpp(228): warning C4244: 'función': conversión de 'int' a 'float'; posible pérdida de datos
+d:\desarrollo i\project2\project2\source.cpp(282): warning C4244: 'función': conversión de 'int' a 'float'; posible pérdida de datos
+d:\desarrollo i\project2\project2\source.cpp(283): warning C4244: 'función': conversión de 'int' a 'float'; posible pérdida de datos
+d:\desarrollo i\project2\project2\source.cpp(298): warning C4244: 'función': conversión de 'int' a 'float'; posible pérdida de datos
+d:\desarrollo i\project2\project2\source.cpp(357): warning C4244: 'función': conversión de 'int' a 'float'; posible pérdida de datos
+d:\desarrollo i\project2\project2\source.cpp(114): warning C4101: 'newBall': variable local sin referencia
+d:\desarrollo i\project2\project2\source.cpp(61): warning C4716: 'endScreen': debe devolver un valor
+d:\desarrollo i\project2\project2\source.cpp(409): warning C4716: 'juego': debe devolver un valor
+  Project2.vcxproj -> D:\Desarrollo I\Project2\Debug\Project2.exe

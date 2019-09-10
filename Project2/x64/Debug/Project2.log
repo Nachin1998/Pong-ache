@@ -1,0 +1,9 @@
+﻿  Source.cpp
+d:\desarrollo i\project2\project2\source.cpp(50): error C3861: 'juego': no se encontró el identificador
+d:\desarrollo i\project2\project2\source.cpp(80): error C3861: 'juego': no se encontró el identificador
+d:\desarrollo i\project2\project2\source.cpp(151): warning C4553: "==": el resultado de la expresión no se usa. ¿Quiso decir "="?
+d:\desarrollo i\project2\project2\source.cpp(152): warning C4553: "==": el resultado de la expresión no se usa. ¿Quiso decir "="?
+d:\desarrollo i\project2\project2\source.cpp(215): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\desarrollo i\project2\project2\source.cpp(216): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\desarrollo i\project2\project2\source.cpp(280): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+d:\desarrollo i\project2\project2\source.cpp(333): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
