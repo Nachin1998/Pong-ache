@@ -1,11 +1,11 @@
 ﻿  Source.cpp
-c:\users\administrador\desktop\pong_v1\project2\source.cpp(182): warning C4553: "==": el resultado de la expresión no se usa. ¿Quiso decir "="?
-c:\users\administrador\desktop\pong_v1\project2\source.cpp(183): warning C4553: "==": el resultado de la expresión no se usa. ¿Quiso decir "="?
-c:\users\administrador\desktop\pong_v1\project2\source.cpp(231): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\administrador\desktop\pong_v1\project2\source.cpp(232): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\administrador\desktop\pong_v1\project2\source.cpp(284): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\administrador\desktop\pong_v1\project2\source.cpp(285): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\administrador\desktop\pong_v1\project2\source.cpp(300): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\administrador\desktop\pong_v1\project2\source.cpp(359): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\administrador\desktop\pong_v1\project2\source.cpp(127): warning C4101: 'newBall': variable local sin referencia
-  Project2.vcxproj -> C:\Users\Administrador\Desktop\Pong_V1\Debug\Project2.exe
+c:\users\usuario\desktop\pong_v1\project2\source.cpp(182): warning C4553: '==': el operador no tiene efecto; ¿ha pensado en '='?
+c:\users\usuario\desktop\pong_v1\project2\source.cpp(183): warning C4553: '==': el operador no tiene efecto; ¿ha pensado en '='?
+c:\users\usuario\desktop\pong_v1\project2\source.cpp(220): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\usuario\desktop\pong_v1\project2\source.cpp(221): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\usuario\desktop\pong_v1\project2\source.cpp(251): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\usuario\desktop\pong_v1\project2\source.cpp(252): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\usuario\desktop\pong_v1\project2\source.cpp(268): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\usuario\desktop\pong_v1\project2\source.cpp(305): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\usuario\desktop\pong_v1\project2\source.cpp(127): warning C4101: 'newBall': variable local sin referencia
+  Project2.vcxproj -> C:\Users\Usuario\Desktop\Pong_V1\Debug\Project2.exe

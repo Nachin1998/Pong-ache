@@ -26,7 +26,7 @@ Music music;
 	
 }*/
 
-void cambiarColor(int counterColor, Color &playerColor, Color background) {
+void cambiarColor(int &counterColor, Color &playerColor, Color &background) {
 	if (counterColor % 2 == 0) {
 		playerColor = BLACK;
 		background = WHITE;
@@ -198,7 +198,7 @@ void juego() {
 			player2Barrier.x = player[1].rec.x;
 			player2Barrier.y = player[1].rec.y;
 
-			cambiarColor(counterColor, playerColor, background);
+			cambiarColor(counter, playerColor, background);
 		}
 
 		if (ballPosition.x <= 0) {
@@ -206,24 +206,12 @@ void juego() {
 			points2++;
 			player2Barrier.x = player[1].rec.x;
 			player2Barrier.y = player[1].rec.y;
-			if (counterColor % 2 == 0) {
-				playerColor = BLACK;
-				background = WHITE;
-			}
-			else {
-				playerColor = WHITE;
-				background = BLACK;
-			}
-			if (counterColor >= 1) {
-				counterColor = 0 - 1;
-			}
-			counterColor++;
+			cambiarColor(counter, playerColor, background);
 		}
 
 		//Detects the colision and changes the color
 		if ((ballPosition.y >= (GetScreenHeight() - ballRadius)) || (ballPosition.y <= ballRadius)) {
 			ballSpeed.y *= -1.0f;
-
 			cambiarColor(counter, playerColor, background);
 		}
 
@@ -234,35 +222,11 @@ void juego() {
 			ballSpeed.x *= -1.0f;
 			if (ballSpeed.x < 0) {
 				ballPosition.x -= 15;
-
-				if (counterColor % 2 == 0) {
-					playerColor = BLACK;
-					background = WHITE;
-				}
-				else {
-					playerColor = WHITE;
-					background = BLACK;
-				}
-				if (counterColor >= 1) {
-					counterColor = 0 - 1;
-				}
-				counterColor++;
+				cambiarColor(counter, playerColor, background);
 			}
 			else {
 				ballPosition.x += 15;
-
-				if (counterColor % 2 == 0) {
-					playerColor = BLACK;
-					background = WHITE;
-				}
-				else {
-					playerColor = WHITE;
-					background = BLACK;
-				}
-				if (counterColor >= 1) {
-					counterColor = 0 - 1;
-				}
-				counterColor++;
+				cambiarColor(counter, playerColor, background);
 			}
 		}
 
@@ -284,6 +248,7 @@ void juego() {
 		if (CheckCollisionCircleRec(ballPosition, ballRadius, player1Barrier) ||
 			CheckCollisionCircleRec(ballPosition, ballRadius, player2Barrier)) {
 			counter++;			
+			cambiarColor(counter, playerColor, background);
 			//multiplyBall(ballPosition, ballSpeed, playerColor);
 		}
 
@@ -303,34 +268,12 @@ void juego() {
 					if (ballSpeed.x < 0) {
 						ballPosition.x -= 15;
 
-						if (counterColor % 2 == 0) {
-							playerColor = BLACK;
-							background = WHITE;
-						}
-						else {
-							playerColor = WHITE;
-							background = BLACK;
-						}
-						if (counterColor >= 1) {
-							counterColor = 0 - 1;
-						}
-						counterColor++;
+						cambiarColor(counter, playerColor, background);
 					}
 					else {
 						ballPosition.x += 15;
 
-						if (counterColor % 2 == 0) {
-							playerColor = BLACK;
-							background = WHITE;
-						}
-						else {
-							playerColor = WHITE;
-							background = BLACK;
-						}
-						if (counterColor >= 1) {
-							counterColor = 0 - 1;
-						}
-						counterColor++;
+						cambiarColor(counter, playerColor, background);
 					}
 
 				}
@@ -362,34 +305,12 @@ void juego() {
 					if (ballSpeed.x < 0) {
 						ballPosition.x -= 15;
 
-						if (counterColor % 2 == 0) {
-							playerColor = BLACK;
-							background = WHITE;
-						}
-						else {
-							playerColor = WHITE;
-							background = BLACK;
-						}
-						if (counterColor >= 1) {
-							counterColor = 0 - 1;
-						}
-						counterColor++;
+						cambiarColor(counter, playerColor, background);
 					}
 					else {
 						ballPosition.x += 15;
 
-						if (counterColor % 2 == 0) {
-							playerColor = BLACK;
-							background = WHITE;
-						}
-						else {
-							playerColor = WHITE;
-							background = BLACK;
-						}
-						if (counterColor >= 1) {
-							counterColor = 0 - 1;
-						}
-						counterColor++;
+						cambiarColor(counter, playerColor, background);
 					}
 
 				}
