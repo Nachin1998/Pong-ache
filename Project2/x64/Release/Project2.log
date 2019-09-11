@@ -1,0 +1,11 @@
+﻿  Source.cpp
+c:\users\administrador\desktop\pong_v1\project2\source.cpp(56): error C3861: 'juego': no se encontró el identificador
+c:\users\administrador\desktop\pong_v1\project2\source.cpp(91): error C3861: 'juego': no se encontró el identificador
+c:\users\administrador\desktop\pong_v1\project2\source.cpp(167): warning C4553: "==": el resultado de la expresión no se usa. ¿Quiso decir "="?
+c:\users\administrador\desktop\pong_v1\project2\source.cpp(168): warning C4553: "==": el resultado de la expresión no se usa. ¿Quiso decir "="?
+c:\users\administrador\desktop\pong_v1\project2\source.cpp(227): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\administrador\desktop\pong_v1\project2\source.cpp(228): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\administrador\desktop\pong_v1\project2\source.cpp(282): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\administrador\desktop\pong_v1\project2\source.cpp(283): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\administrador\desktop\pong_v1\project2\source.cpp(298): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\administrador\desktop\pong_v1\project2\source.cpp(357): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
