@@ -15,4 +15,11 @@ d:\desarrollo i\project2\project2\source.cpp(283): warning C4244: 'función': co
 d:\desarrollo i\project2\project2\source.cpp(298): warning C4244: 'función': conversión de 'int' a 'float'; posible pérdida de datos
 d:\desarrollo i\project2\project2\source.cpp(357): warning C4244: 'función': conversión de 'int' a 'float'; posible pérdida de datos
 d:\desarrollo i\project2\project2\source.cpp(114): warning C4101: 'newBall': variable local sin referencia
-LINK : fatal error LNK1104: no se puede abrir el archivo 'D:\Desarrollo I\Project2\Release\Project2.exe'
+  Generando código
+d:\desarrollo i\project2\project2\source.cpp(61): warning C4716: 'endScreen': debe devolver un valor
+d:\desarrollo i\project2\project2\source.cpp(409): warning C4716: 'juego': debe devolver un valor
+  5 of 5 functions (100.0%) were compiled.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Generación de código finalizada
+  Project2.vcxproj -> D:\Desarrollo I\Project2\Release\Project2.exe
