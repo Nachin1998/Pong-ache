@@ -2,7 +2,7 @@
 
 const int screenWidth = 800;
 const int screenHeight = 450;
-const int win = 1;
+const int win = 10;
 
 void juego();
 
@@ -20,17 +20,22 @@ struct barriers {
 	bool activeBarrier;
 }barrier[2];
 
-struct ball {
-	float speed;
-	float radius;
+struct balls {
 	bool active;
-}balls[30];
+}ball[30];
 
 Music music;
 
-/*void multiplyBall(Vector2 ballPosition,Vector2 ballSpeed,Color playerColor) {
-	
-}*/
+void multiplyBall(Vector2 ballPosition, Vector2 ballSpeed) {
+	for (int i = 0; i < 30; i++)
+	{
+		ball[i + 1].active = true;
+		if (ball[i + 1].active = true) {
+			DrawCircleV(ballPosition, 10, player[0].playerColor);
+			ballSpeed.x *= -1;
+		}
+	}
+}
 
 void cambiarColor(int &counterColor, Color &background) {
 	if (counterColor % 2 == 0) {
@@ -153,6 +158,13 @@ void juego() {
 		barrier[0].rec.x = player[0].rec.x + 5;
 		barrier[1].rec.x = player[0].rec.x;
 
+	//Balls
+	for (int i = 0; i < 30; i++)
+	{
+		ball[i].active = false;
+	}
+		ball[0].active = true;
+
 	SetTargetFPS(60);
 
 	// Main game loop
@@ -247,7 +259,7 @@ void juego() {
 			CheckCollisionCircleRec(ballPosition, ballRadius, barrier[1].rec)) {
 			counter++;			
 			cambiarColor(counter, background);
-			//multiplyBall(ballPosition, ballSpeed, playerColor);
+			multiplyBall(ballPosition, ballSpeed);
 		}
 
 		if (IsKeyPressed(KEY_SPACE)) {
@@ -330,7 +342,6 @@ void juego() {
 
 void main()
 {
-
 	InitWindow(screenWidth, screenHeight, "Pongacho");
 	menu();
 	CloseWindow();

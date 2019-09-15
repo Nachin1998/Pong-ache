@@ -1,11 +1,11 @@
 ﻿  Source.cpp
-c:\users\usuario\desktop\pong_v1\project2\source.cpp(184): warning C4553: '==': el operador no tiene efecto; ¿ha pensado en '='?
-c:\users\usuario\desktop\pong_v1\project2\source.cpp(185): warning C4553: '==': el operador no tiene efecto; ¿ha pensado en '='?
-c:\users\usuario\desktop\pong_v1\project2\source.cpp(220): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\usuario\desktop\pong_v1\project2\source.cpp(221): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\usuario\desktop\pong_v1\project2\source.cpp(248): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\usuario\desktop\pong_v1\project2\source.cpp(249): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\usuario\desktop\pong_v1\project2\source.cpp(265): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\usuario\desktop\pong_v1\project2\source.cpp(302): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\usuario\desktop\pong_v1\project2\source.cpp(334): warning C4326: el tipo de valor devuelto de 'main' debe ser 'int' en lugar de 'void'
+c:\users\usuario\desktop\pong_v1\project2\source.cpp(194): warning C4553: '==': el operador no tiene efecto; ¿ha pensado en '='?
+c:\users\usuario\desktop\pong_v1\project2\source.cpp(195): warning C4553: '==': el operador no tiene efecto; ¿ha pensado en '='?
+c:\users\usuario\desktop\pong_v1\project2\source.cpp(230): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\usuario\desktop\pong_v1\project2\source.cpp(231): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\usuario\desktop\pong_v1\project2\source.cpp(258): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\usuario\desktop\pong_v1\project2\source.cpp(259): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\usuario\desktop\pong_v1\project2\source.cpp(275): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\usuario\desktop\pong_v1\project2\source.cpp(312): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\usuario\desktop\pong_v1\project2\source.cpp(344): warning C4326: el tipo de valor devuelto de 'main' debe ser 'int' en lugar de 'void'
   Project2.vcxproj -> C:\Users\Usuario\Desktop\Pong_V1\Debug\Project2.exe

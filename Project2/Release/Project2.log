@@ -1,1 +1,16 @@
-﻿LINK : fatal error LNK1104: no se puede abrir el archivo 'C:\Users\Usuario\Desktop\Pong_V1\Release\Project2.exe'
+﻿  Source.cpp
+c:\users\usuario\desktop\pong_v1\project2\source.cpp(194): warning C4553: '==': el operador no tiene efecto; ¿ha pensado en '='?
+c:\users\usuario\desktop\pong_v1\project2\source.cpp(195): warning C4553: '==': el operador no tiene efecto; ¿ha pensado en '='?
+c:\users\usuario\desktop\pong_v1\project2\source.cpp(230): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\usuario\desktop\pong_v1\project2\source.cpp(231): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\usuario\desktop\pong_v1\project2\source.cpp(258): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\usuario\desktop\pong_v1\project2\source.cpp(259): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\usuario\desktop\pong_v1\project2\source.cpp(275): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\usuario\desktop\pong_v1\project2\source.cpp(312): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\usuario\desktop\pong_v1\project2\source.cpp(344): warning C4326: el tipo de valor devuelto de 'main' debe ser 'int' en lugar de 'void'
+  Generando código
+  2 of 6 functions (33.3%) were compiled, the rest were copied from previous compilation.
+    1 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
+  Generación de código finalizada
+  Project2.vcxproj -> C:\Users\Usuario\Desktop\Pong_V1\Release\Project2.exe
