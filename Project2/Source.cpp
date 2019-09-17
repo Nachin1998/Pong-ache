@@ -6,7 +6,7 @@ const int playerMax = 2;
 const int ballMax = 20;
 const int win = 300;
 
-void juego();
+void game();
 
 struct players {
 	Rectangle rec;
@@ -88,7 +88,7 @@ void endScreen() {
 		if (IsKeyPressed(KEY_ENTER)) {
 			player[0].points = 0;
 			player[1].points = 0;
-			juego();
+			game();
 		}
 		EndDrawing();
 		//----------------------------------------------------------------------------------
@@ -119,13 +119,13 @@ void menu() {
 		DrawText("Space para el player 1", screenWidth / 2 - 250, screenHeight / 2 + 50, 20, LIGHTGRAY);
 		DrawText("Right Ctrl para el player 2", screenWidth / 2 + 20, screenHeight / 2 + 50, 20, LIGHTGRAY);
 
-		if (IsKeyPressed(KEY_ENTER)) juego();
+		if (IsKeyPressed(KEY_ENTER)) game();
 
 		EndDrawing();
 	}
 }
 
-void juego() {
+void game() {
 	//music = LoadMusicStream("Audio/Megalovania.ogg");
 
 	PlayMusicStream(music);
@@ -277,6 +277,8 @@ void juego() {
 		}
 		DrawRectangleRec(player[0].rec, player[0].playerColor);
 		DrawRectangleRec(player[1].rec, player[1].playerColor);
+		DrawRectangleRec(barrier[0].rec, player[0].playerColor);
+		DrawRectangleRec(barrier[1].rec, player[0].playerColor);
 
 		for (int i = 0; i < ballMax; i++)
 		{
@@ -303,7 +305,7 @@ void juego() {
 		if (barrier[0].active == true) {
 			if (IsKeyUp(KEY_SPACE)) {
 
-				DrawRectangleRec(barrier[0].rec, player[0].playerColor);
+				
 				barrier[0].rec.x += 5;
 
 				if (CheckCollisionCircleRec(ball[0].ballPosition, ballRadius, barrier[0].rec))
@@ -339,7 +341,6 @@ void juego() {
 
 		if (barrier[1].active == true) {
 			if (IsKeyUp(KEY_RIGHT_CONTROL)) {
-				DrawRectangleRec(barrier[1].rec, player[1].playerColor);
 				barrier[1].rec.x -= 5;
 
 				if (CheckCollisionCircleRec(ball[0].ballPosition, ballRadius, barrier[1].rec))
