@@ -21,18 +21,30 @@ struct barriers {
 }barrier[2];
 
 struct balls {
+	Vector2 ballSpeed;
+	float ballSpeedX;
+	float ballSpeedY;
+	Vector2 ballPosition;
 	bool active;
 }ball[30];
 
 Music music;
 
-void multiplyBall(Vector2 ballPosition, Vector2 ballSpeed) {
-	for (int i = 0; i < 30; i++)
+void multiplicarBall(int &counterBall) {
+	counterBall++;
+	for (int i = counterBall; i < 30; i++)
 	{
-		ball[i + 1].active = true;
-		if (ball[i + 1].active = true) {
-			DrawCircleV(ballPosition, 10, player[0].playerColor);
-			ballSpeed.x *= -1;
+		ball[i].active = true;
+	}
+
+	for (int i = counterBall; i < 30; i++)
+	{
+		if (ball[i].active = true) {
+			DrawCircleV(ball[i].ballPosition, 10, player[0].playerColor);
+			if (i % 2 == 0) {
+				ball[i].ballSpeed.x *= -1;
+				ball[i].ballSpeed.y *= -1;
+			}
 		}
 	}
 }
@@ -62,16 +74,16 @@ void endScreen() {
 		ClearBackground(WHITE);
 
 		if (player[0].points == win) {
-			DrawText(FormatText("Ganador: Jugador 1: %i puntos", player[0].points), screenWidth / 2-150, screenHeight / 2-50, 20, BLACK);
+			DrawText(FormatText("Ganador: Jugador 1: %i puntos", player[0].points), screenWidth / 2 - 150, screenHeight / 2 - 50, 20, BLACK);
 			DrawText(FormatText("Pededor: Jugador 2: %i puntos", player[1].points), screenWidth / 2 - 150, screenHeight / 2, 20, BLACK);
 		}
-		
+
 		if (player[1].points == win) {
-			DrawText(FormatText("Ganador: Jugador 2: %i puntos", player[1].points), screenWidth/ 2 - 150, screenHeight / 2-50, 20, BLACK);
+			DrawText(FormatText("Ganador: Jugador 2: %i puntos", player[1].points), screenWidth / 2 - 150, screenHeight / 2 - 50, 20, BLACK);
 			DrawText(FormatText("Perdedor: Jugador 1: %i puntos", player[0].points), screenWidth / 2 - 150, screenHeight / 2, 20, BLACK);
 		}
 
-		DrawText("Presione Enter para volver a jugar.", screenWidth / 2 - 150, screenHeight / 2+50, 20, BLACK);
+		DrawText("Presione Enter para volver a jugar.", screenWidth / 2 - 150, screenHeight / 2 + 50, 20, BLACK);
 
 		if (IsKeyPressed(KEY_ENTER)) {
 			player[0].points = 0;
@@ -95,16 +107,16 @@ void menu() {
 
 		ClearBackground(BLACK);
 
-		DrawText("Pong", screenWidth/2-70, screenHeight/2-200, 50, LIGHTGRAY);
-		DrawText("(No apto para epilepticos)", screenWidth/2-105, screenHeight/2-140, 15, LIGHTGRAY);
+		DrawText("Pong", screenWidth / 2 - 70, screenHeight / 2 - 200, 50, LIGHTGRAY);
+		DrawText("(No apto para epilepticos)", screenWidth / 2 - 105, screenHeight / 2 - 140, 15, LIGHTGRAY);
 
-		DrawText("Start", screenWidth/2-150, screenHeight/2, 20, LIGHTGRAY);
-		DrawText("(Enter)", screenWidth/2-160, screenHeight/2+20, 20, LIGHTGRAY);
+		DrawText("Start", screenWidth / 2 - 150, screenHeight / 2, 20, LIGHTGRAY);
+		DrawText("(Enter)", screenWidth / 2 - 160, screenHeight / 2 + 20, 20, LIGHTGRAY);
 
-		DrawText("Exit", screenWidth/2+70, screenHeight/2, 20, LIGHTGRAY);
-		DrawText("(Escape)", screenWidth/2+45, screenHeight/2+20, 20, LIGHTGRAY);
+		DrawText("Exit", screenWidth / 2 + 70, screenHeight / 2, 20, LIGHTGRAY);
+		DrawText("(Escape)", screenWidth / 2 + 45, screenHeight / 2 + 20, 20, LIGHTGRAY);
 
-		DrawText("Space para el player 1", screenWidth/2-250, screenHeight/2+50, 20, LIGHTGRAY);
+		DrawText("Space para el player 1", screenWidth / 2 - 250, screenHeight / 2 + 50, 20, LIGHTGRAY);
 		DrawText("Right Ctrl para el player 2", screenWidth / 2 + 20, screenHeight / 2 + 50, 20, LIGHTGRAY);
 
 		if (IsKeyPressed(KEY_ENTER)) juego();
@@ -114,37 +126,33 @@ void menu() {
 }
 
 void juego() {
-	music = LoadMusicStream("Audio/Megalovania.ogg");
+	//music = LoadMusicStream("Audio/Megalovania.ogg");
 
 	PlayMusicStream(music);
 
-	float ballSpeedX = 6.5f;
-	float ballSpeedY = 6.5f;
-	Vector2 ballSpeed = { ballSpeedX, ballSpeedY };
 	int ballRadius = 5;
 	Color background = BLACK;
 	int counterColor = 0;
 	int counterTiempo = 0;
-	int counter = 0;
+	int counterBall = 0;
 
 	//Balls
 	Vector2 playerSize = { (float)18, (float)120 };
 	Vector2 barrierSize = { (float)8, (float)120 };
 	Vector2 ballPositionInit = { (float)screenWidth / 2, (float)screenHeight / 2 };
-	Vector2 ballPosition = ballPositionInit;
-	
+
 	//Players
 	for (int i = 0; i < 2; i++)
 	{
-		player[i].rec.y= screenHeight / 2;
+		player[i].rec.y = screenHeight / 2;
 		player[i].rec.width = playerSize.x;
 		player[i].rec.height = playerSize.y;
 		player[i].size = playerSize;
 		player[i].points = 0;
 		player[i].playerColor = WHITE;
 	}
-		player[0].rec.x = screenWidth - screenWidth + 30;
-		player[1].rec.x = screenWidth - 50;
+	player[0].rec.x = screenWidth - screenWidth + 30;
+	player[1].rec.x = screenWidth - 50;
 
 	//Barriers
 	for (int i = 0; i < 2; i++)
@@ -155,15 +163,19 @@ void juego() {
 		barrier[i].size = barrierSize;
 		barrier[i].activeBarrier = false;
 	}
-		barrier[0].rec.x = player[0].rec.x + 5;
-		barrier[1].rec.x = player[0].rec.x;
+	barrier[0].rec.x = player[0].rec.x + 5;
+	barrier[1].rec.x = player[0].rec.x;
 
 	//Balls
 	for (int i = 0; i < 30; i++)
 	{
+		ball[i].ballPosition = ballPositionInit;
+		ball[i].ballSpeedX = 6.5f;
+		ball[i].ballSpeedY = 6.5f;
+		ball[i].ballSpeed = { ball[i].ballSpeedX, ball[i].ballSpeedY };
 		ball[i].active = false;
 	}
-		ball[0].active = true;
+	ball[0].active = true;
 
 	SetTargetFPS(60);
 
@@ -183,7 +195,6 @@ void juego() {
 			player[0].rec.y = 0;
 		}
 
-
 		if (IsKeyDown(KEY_UP)) player[1].rec.y -= 6.0f;
 		if (IsKeyDown(KEY_DOWN)) player[1].rec.y += 6.0f;
 		if (player[1].rec.y > screenHeight - 120)
@@ -194,13 +205,13 @@ void juego() {
 		barrier[0].rec.y == player[0].rec.y;
 		barrier[1].rec.y == player[1].rec.y;
 
-		ballPosition.x += ballSpeed.x;
-		ballPosition.y += ballSpeed.y;
+		ball[0].ballPosition.x += ball[0].ballSpeed.x;
+		ball[0].ballPosition.y += ball[0].ballSpeed.y;
 
 		// Check walls collision for bouncing and changes color
 
-		if (ballPosition.x >= GetScreenWidth()) {
-			ballPosition = ballPositionInit;
+		if (ball[0].ballPosition.x >= GetScreenWidth()) {
+			ball[0].ballPosition = ballPositionInit;
 			player[0].points++;
 
 			for (int i = 0; i < 2; i++)
@@ -209,34 +220,34 @@ void juego() {
 				barrier[i].rec.x = player[i].rec.x;
 				barrier[i].rec.y = player[i].rec.y;
 			}
-			cambiarColor(counter, background);
+			cambiarColor(counterColor, background);
 		}
 
-		if (ballPosition.x <= 0) {
-			ballPosition = ballPositionInit;
+		if (ball[0].ballPosition.x <= 0) {
+			ball[0].ballPosition = ballPositionInit;
 			player[1].points++;
 			barrier[1].rec.x = player[1].rec.x;
 			barrier[1].rec.y = player[1].rec.y;
-			cambiarColor(counter, background);
+			cambiarColor(counterColor, background);
 		}
 
 		//Detects the colision and changes the color
-		if ((ballPosition.y >= (GetScreenHeight() - ballRadius)) || (ballPosition.y <= ballRadius)) {
-			ballSpeed.y *= -1.0f;
-			cambiarColor(counter, background);
+		if ((ball[0].ballPosition.y >= (GetScreenHeight() - ballRadius)) || (ball[0].ballPosition.y <= ballRadius)) {
+			ball[0].ballSpeed.y *= -1.0f;
+			cambiarColor(counterColor, background);
 		}
 
 		//Detects the colision and changes the color
-		if (CheckCollisionCircleRec(ballPosition, ballRadius, player[0].rec) ||
-			CheckCollisionCircleRec(ballPosition, ballRadius, player[1].rec)) {
-			ballSpeed.x *= -1.0f;
-			if (ballSpeed.x < 0) {
-				ballPosition.x -= 15;
-				cambiarColor(counter, background);
+		if (CheckCollisionCircleRec(ball[0].ballPosition, ballRadius, player[0].rec) ||
+			CheckCollisionCircleRec(ball[0].ballPosition, ballRadius, player[1].rec)) {
+			ball[0].ballSpeed.x *= -1.0f;
+			if (ball[0].ballSpeed.x < 0) {
+				ball[0].ballPosition.x -= 15;
+				cambiarColor(counterColor, background);
 			}
 			else {
-				ballPosition.x += 15;
-				cambiarColor(counter, background);
+				ball[0].ballPosition.x += 15;
+				cambiarColor(counterColor, background);
 			}
 		}
 
@@ -251,15 +262,15 @@ void juego() {
 
 		DrawText(FormatText("%i", player[0].points), 340, 200, 50, player[0].playerColor);
 		DrawText(FormatText("%i", player[1].points), 420, 200, 50, player[1].playerColor);
-		DrawCircleV(ballPosition, 10, player[0].playerColor);
+
+		DrawCircleV(ball[0].ballPosition, 10, player[0].playerColor);
 		DrawRectangleRec(player[0].rec, player[0].playerColor);
 		DrawRectangleRec(player[1].rec, player[1].playerColor);
 
-		if (CheckCollisionCircleRec(ballPosition, ballRadius, barrier[0].rec) ||
-			CheckCollisionCircleRec(ballPosition, ballRadius, barrier[1].rec)) {
-			counter++;			
-			cambiarColor(counter, background);
-			multiplyBall(ballPosition, ballSpeed);
+		if (CheckCollisionCircleRec(ball[0].ballPosition, ballRadius, barrier[0].rec) ||
+			CheckCollisionCircleRec(ball[0].ballPosition, ballRadius, barrier[1].rec)) {
+			cambiarColor(counterColor, background);
+			multiplicarBall(counterBall);
 		}
 
 		if (IsKeyPressed(KEY_SPACE)) {
@@ -272,22 +283,22 @@ void juego() {
 				DrawRectangleRec(barrier[0].rec, player[0].playerColor);
 				barrier[0].rec.x += 5;
 
-				if (CheckCollisionCircleRec(ballPosition, ballRadius, barrier[0].rec))
+				if (CheckCollisionCircleRec(ball[0].ballPosition, ballRadius, barrier[0].rec))
 				{
-					ballSpeed.x *= -1.0f;
-					if (ballSpeed.x < 0) {
-						ballPosition.x -= 15;
+					ball[0].ballSpeed.x *= -1.0f;
+					if (ball[0].ballSpeed.x < 0) {
+						ball[0].ballPosition.x -= 15;
 
-						cambiarColor(counter, background);
+						cambiarColor(counterColor, background);
 					}
 					else {
-						ballPosition.x += 15;
+						ball[0].ballPosition.x += 15;
 
-						cambiarColor(counter, background);
+						cambiarColor(counterColor, background);
 					}
 
 				}
-				
+
 				if (barrier[0].rec.x > 390) {
 					barrier[0].activeBarrier = false;
 				}
@@ -309,22 +320,22 @@ void juego() {
 				DrawRectangleRec(barrier[1].rec, player[1].playerColor);
 				barrier[1].rec.x -= 5;
 
-				if (CheckCollisionCircleRec(ballPosition, ballRadius, barrier[1].rec))
+				if (CheckCollisionCircleRec(ball[0].ballPosition, ballRadius, barrier[1].rec))
 				{
-					ballSpeed.x *= -1.0f;
-					if (ballSpeed.x < 0) {
-						ballPosition.x -= 15;
+					ball[0].ballSpeed.x *= -1.0f;
+					if (ball[0].ballSpeed.x < 0) {
+						ball[0].ballPosition.x -= 15;
 
-						cambiarColor(counter, background);
+						cambiarColor(counterColor, background);
 					}
 					else {
-						ballPosition.x += 15;
+						ball[0].ballPosition.x += 15;
 
-						cambiarColor(counter, background);
+						cambiarColor(counterColor, background);
 					}
 
 				}
-				
+
 				if (barrier[1].rec.x < 400) {
 					barrier[1].activeBarrier = false;
 				}
