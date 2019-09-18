@@ -4,7 +4,7 @@ const int screenWidth = 800;
 const int screenHeight = 450;
 const int playerMax = 2;
 const int ballMax = 20;
-const int win = 300;
+const int win = 100;
 
 void game();
 
@@ -37,7 +37,7 @@ void multiplyBall(int &counterBall) {
 		ball[counterBall].active = true;
 	}
 
-	for (int i = counterBall; i < ballMax; i++)
+	for (int i = 0; i < ballMax; i++)
 	{
 		if (ball[i].active == true) {
 			ball[i].ballPosition = ball[0].ballPosition;
@@ -273,7 +273,6 @@ void game() {
 		{
 			if (ball[i].active == true) 
 				DrawCircleV(ball[i].ballPosition, 10, player[0].playerColor);
-			
 		}
 		DrawRectangleRec(player[0].rec, player[0].playerColor);
 		DrawRectangleRec(player[1].rec, player[1].playerColor);
@@ -362,7 +361,7 @@ void game() {
 			}
 		}
 		else
-			if (IsKeyUp(KEY_SPACE)) {
+			if (IsKeyUp(KEY_RIGHT_CONTROL)) {
 				barrier[1].rec.x = player[1].rec.x;
 				barrier[1].rec.y = player[1].rec.y;
 			}
