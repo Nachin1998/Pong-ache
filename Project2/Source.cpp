@@ -37,7 +37,7 @@ void multiplyBall(int &counterBall) {
 		ball[counterBall].active = true;
 	}
 
-	for (int i = 0; i < ballMax; i++)
+	for (int i = counterBall; i < ballMax; i++)
 	{
 		if (ball[i].active == true) {
 			ball[i].ballPosition = ball[0].ballPosition;
@@ -157,14 +157,12 @@ void game() {
 	//Barriers
 	for (int i = 0; i < playerMax; i++)
 	{
-		barrier[i].rec.y = player[i].rec.y;
 		barrier[i].rec.width = barrierSize.x;
 		barrier[i].rec.height = barrierSize.y;
 		barrier[i].size = barrierSize;
-		barrier[i].active = false;
+		barrier[i].active = false;	
 	}
-	barrier[0].rec.x = player[0].rec.x + 5;
-	barrier[1].rec.x = player[0].rec.x;
+	
 
 	//Balls
 	for (int i = 0; i < ballMax; i++)
@@ -211,21 +209,21 @@ void game() {
 			}
 		}
 
-		// Check walls collision for bouncing and changes color
+		//Detects the colision with the right scoring wall
 		for (int i = 0; i < ballMax; i++)
 		{
 			if (ball[i].ballPosition.x >= GetScreenWidth()) {
-				ball[i].ballPosition = ballPositionInit;
 				player[0].points++;
+				ball[i].ballPosition = ballPositionInit;
 				changeColor(counterColor, background);
 			}
 		}
-		//Detects the colision the scoring wall
+		//Detects the colision with the left scoring wall
 		for (int i = 0; i < ballMax; i++)
 		{
 			if (ball[i].ballPosition.x <= 0) {
-				ball[i].ballPosition = ballPositionInit;
 				player[1].points++;
+				ball[i].ballPosition = ballPositionInit;
 				changeColor(counterColor, background);
 			}
 		}
@@ -256,7 +254,6 @@ void game() {
 				}
 			}
 		}
-		
 
 		if (player[0].points >= win || player[1].points >= win) {
 			endScreen();
@@ -267,17 +264,17 @@ void game() {
 
 		ClearBackground(background);
 
-		DrawText(FormatText("%i", player[0].points), 340, 200, 50, player[0].playerColor);
-		DrawText(FormatText("%i", player[1].points), 420, 200, 50, player[1].playerColor);
 		for (int i = 0; i < ballMax; i++)
 		{
-			if (ball[i].active == true) 
+			if (ball[i].active == true)
 				DrawCircleV(ball[i].ballPosition, 10, player[0].playerColor);
 		}
 		DrawRectangleRec(player[0].rec, player[0].playerColor);
 		DrawRectangleRec(player[1].rec, player[1].playerColor);
 		DrawRectangleRec(barrier[0].rec, player[0].playerColor);
 		DrawRectangleRec(barrier[1].rec, player[0].playerColor);
+		DrawText(FormatText("%i", player[0].points), 340, 200, 50, player[0].playerColor);
+		DrawText(FormatText("%i", player[1].points), 420, 200, 50, player[1].playerColor);
 
 		for (int i = 0; i < ballMax; i++)
 		{
@@ -300,71 +297,32 @@ void game() {
 		if (IsKeyPressed(KEY_SPACE)) {
 			barrier[0].active = true;
 		}
-
 		if (barrier[0].active == true) {
-			if (IsKeyUp(KEY_SPACE)) {
+			barrier[0].rec.x += 5;
 
-				
-				barrier[0].rec.x += 5;
-
-				if (CheckCollisionCircleRec(ball[0].ballPosition, ballRadius, barrier[0].rec))
-				{
-					ball[0].ballSpeed.x *= -1.0f;
-					if (ball[0].ballSpeed.x < 0) {
-						ball[0].ballPosition.x -= 15;
-
-						changeColor(counterColor, background);
-					}
-					else {
-						ball[0].ballPosition.x += 15;
-
-						changeColor(counterColor, background);
-					}
-
-				}
-
-				if (barrier[0].rec.x > 390) {
-					barrier[0].active = false;
-				}
+			if (barrier[0].rec.x > 390) {
+				barrier[0].active = false;
 			}
 		}
-		else
-			if (IsKeyUp(KEY_SPACE)) {
-				barrier[0].rec.x = player[0].rec.x;
-				barrier[0].rec.y = player[0].rec.y;
-			}
+		if (barrier[0].active == false) {
+			barrier[0].rec.x = player[0].rec.x+10;
+			barrier[0].rec.y = player[0].rec.y;
+		}
 
 		if (IsKeyPressed(KEY_RIGHT_CONTROL)) {
 			barrier[1].active = true;
 		}
-
 		if (barrier[1].active == true) {
-			if (IsKeyUp(KEY_RIGHT_CONTROL)) {
-				barrier[1].rec.x -= 5;
+			barrier[1].rec.x -= 5;
 
-				if (CheckCollisionCircleRec(ball[0].ballPosition, ballRadius, barrier[1].rec))
-				{
-					ball[0].ballSpeed.x *= -1.0f;
-					if (ball[0].ballSpeed.x < 0) {
-						ball[0].ballPosition.x -= 15;
-						changeColor(counterColor, background);
-					}
-					else {
-						ball[0].ballPosition.x += 15;
-						changeColor(counterColor, background);
-					}
-
-				}
-				if (barrier[1].rec.x < 400) {
-					barrier[1].active = false;
-				}
+			if (barrier[1].rec.x < 400) {
+				barrier[1].active = false;
 			}
 		}
-		else
-			if (IsKeyUp(KEY_RIGHT_CONTROL)) {
-				barrier[1].rec.x = player[1].rec.x;
-				barrier[1].rec.y = player[1].rec.y;
-			}
+		if (barrier[1].active == false) {
+			barrier[1].rec.x = player[1].rec.x;
+			barrier[1].rec.y = player[1].rec.y;
+		}
 		EndDrawing();
 	}
 }
