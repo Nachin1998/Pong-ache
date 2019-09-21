@@ -96,8 +96,8 @@ void menu() {
 		DrawText("Exit", screenWidth / 2 + 70, screenHeight / 2, 20, LIGHTGRAY);
 		DrawText("(Escape)", screenWidth / 2 + 45, screenHeight / 2 + 20, 20, LIGHTGRAY);
 
-		DrawText("Space para el player 1", screenWidth / 2 - 250, screenHeight / 2 + 50, 20, LIGHTGRAY);
-		DrawText("Right Ctrl para el player 2", screenWidth / 2 + 20, screenHeight / 2 + 50, 20, LIGHTGRAY);
+		DrawText("Space: player 1 skill", screenWidth / 2 - 250, screenHeight / 2 + 50, 20, LIGHTGRAY);
+		DrawText("Right Ctrl: player 2 skill", screenWidth / 2 + 20, screenHeight / 2 + 50, 20, LIGHTGRAY);
 
 		if (IsKeyPressed(KEY_ENTER)) game();
 
