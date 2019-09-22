@@ -1,9 +1,9 @@
 ﻿  Source.cpp
-c:\users\usuario\desktop\pong_v1\project2\source.cpp(178): warning C4553: '==': el operador no tiene efecto; ¿ha pensado en '='?
-c:\users\usuario\desktop\pong_v1\project2\source.cpp(179): warning C4553: '==': el operador no tiene efecto; ¿ha pensado en '='?
+c:\users\usuario\desktop\pong_v1\project2\source.cpp(173): warning C4553: '==': el operador no tiene efecto; ¿ha pensado en '='?
+c:\users\usuario\desktop\pong_v1\project2\source.cpp(174): warning C4553: '==': el operador no tiene efecto; ¿ha pensado en '='?
+c:\users\usuario\desktop\pong_v1\project2\source.cpp(227): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
 c:\users\usuario\desktop\pong_v1\project2\source.cpp(228): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\usuario\desktop\pong_v1\project2\source.cpp(229): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\usuario\desktop\pong_v1\project2\source.cpp(242): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
 c:\users\usuario\desktop\pong_v1\project2\source.cpp(243): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\usuario\desktop\pong_v1\project2\source.cpp(244): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\usuario\desktop\pong_v1\project2\source.cpp(347): warning C4326: el tipo de valor devuelto de 'main' debe ser 'int' en lugar de 'void'
+c:\users\usuario\desktop\pong_v1\project2\source.cpp(370): warning C4326: el tipo de valor devuelto de 'main' debe ser 'int' en lugar de 'void'
   Project2.vcxproj -> C:\Users\Usuario\Desktop\Pong_V1\Debug\Project2.exe

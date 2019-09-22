@@ -3,7 +3,7 @@
 const int screenWidth = 800;
 const int screenHeight = 450;
 const int playerMax = 2;
-const int ballMax = 10;
+const int ballMax = 50;
 const int win = 100;
 const Vector2 ballPositionInit = { (float)screenWidth / 2, (float)screenHeight / 2 };
 
@@ -11,7 +11,9 @@ void menu();
 void game();
 void endScreen();
 void collisions(int &counterBall, int &counterColor, Color &background);
+void playerLimits(int which);
 void barrierShooting();
+void powerUp();
 void multiplyBall(int &counterBall);
 void changeColor(int &counterColor, Color &background);
 
@@ -38,11 +40,11 @@ struct balls {
 	bool active;
 }ball[ballMax];
 
-struct ammunition {
+/*struct ammunition {
 	Vector2 ammoSpeed;
 	Vector2 ammoPosition;
 	bool active;
-}ammo;
+}ammo;*/
 
 Music music;
 
@@ -96,8 +98,8 @@ void menu() {
 		DrawText("Exit", screenWidth / 2 + 70, screenHeight / 2, 20, LIGHTGRAY);
 		DrawText("(Escape)", screenWidth / 2 + 45, screenHeight / 2 + 20, 20, LIGHTGRAY);
 
-		DrawText("Space: player 1 skill", screenWidth / 2 - 250, screenHeight / 2 + 50, 20, LIGHTGRAY);
-		DrawText("Right Ctrl: player 2 skill", screenWidth / 2 + 20, screenHeight / 2 + 50, 20, LIGHTGRAY);
+		DrawText("Space: player 1 skill", screenWidth / 2 - 230, screenHeight / 2 + 50, 20, LIGHTGRAY);
+		DrawText("Right Ctrl: player 2 skill", screenWidth / 2 - 10, screenHeight / 2 + 50, 20, LIGHTGRAY);
 
 		if (IsKeyPressed(KEY_ENTER)) game();
 
@@ -106,6 +108,7 @@ void menu() {
 }
 
 void game() {
+	
 	music = LoadMusicStream("Audio/Megalovania.ogg");
 
 	PlayMusicStream(music);
@@ -114,15 +117,15 @@ void game() {
 	int counterColor = 0;
 	int counterTiempo = 0;
 	int counterBall = 0;
+	Vector2 size = { 18, 120 };
 
 	//Players
-	Vector2 playerSize = { (float)18, (float)120 };
 	for (int i = 0; i < playerMax; i++)
 	{
 		player[i].rec.y = screenHeight / 2;
-		player[i].rec.width = playerSize.x;
-		player[i].rec.height = playerSize.y;
-		player[i].size = playerSize;
+		player[i].rec.width = size.x;
+		player[i].rec.height = size.y;
+		player[i].size = size;
 		player[i].points = 0;
 		player[i].ammo = 0;
 		player[i].haveAmmo = false;
@@ -132,12 +135,11 @@ void game() {
 	player[1].rec.x = screenWidth - 50;
 
 	//Barriers
-	Vector2 barrierSize = { (float)8, (float)120 };
 	for (int i = 0; i < playerMax; i++)
 	{
-		barrier[i].rec.width = barrierSize.x;
-		barrier[i].rec.height = barrierSize.y;
-		barrier[i].size = barrierSize;
+		barrier[i].rec.width = size.x/3;
+		barrier[i].rec.height = player[i].rec.height;
+		barrier[i].size = size;
 		barrier[i].active = false;	
 	}
 	
@@ -157,24 +159,17 @@ void game() {
 	// Main game loop
 	while (!WindowShouldClose())
 	{
-		UpdateMusicStream(music);
+		//UpdateMusicStream(music);
 
 		if (IsKeyDown(KEY_W)) player[0].rec.y -= 6.0f;
 		if (IsKeyDown(KEY_S)) player[0].rec.y += 6.0f;
-		if (player[0].rec.y > screenHeight - 120) {
-			player[0].rec.y = screenHeight - 120;
-		}
-		if (player[0].rec.y < 0) {
-			player[0].rec.y = 0;
-		}
+		playerLimits(0);
 
 		if (IsKeyDown(KEY_UP)) player[1].rec.y -= 6.0f;
 		if (IsKeyDown(KEY_DOWN)) player[1].rec.y += 6.0f;
-		if (player[1].rec.y > screenHeight - 120)
-			player[1].rec.y = screenHeight - 120;
-		if (player[1].rec.y < 0)
-			player[1].rec.y = 0;
+		playerLimits(1);
 
+		barrierShooting();
 		barrier[0].rec.y == player[0].rec.y;
 		barrier[1].rec.y == player[1].rec.y;
 
@@ -188,7 +183,8 @@ void game() {
 		}
 		
 		collisions(counterBall, counterColor, background);
-
+		powerUp();
+		
 		//Goes to the end screen
 		if (player[0].points >= win || player[1].points >= win) {
 			endScreen();
@@ -199,24 +195,27 @@ void game() {
 
 		ClearBackground(background);
 
+		//Draws all balls
 		for (int i = 0; i < ballMax; i++)
 		{
 			if (ball[i].active == true)
 				DrawCircleV(ball[i].ballPosition, 10, player[0].playerColor);
 		}
-		DrawRectangleRec(player[0].rec, player[0].playerColor);
-		DrawRectangleRec(player[1].rec, player[1].playerColor);
+		
+		//Draws players and barriers
 		for (int i = 0; i < playerMax; i++)
 		{
+			DrawRectangleRec(player[i].rec, player[i].playerColor);
 			if (barrier[i].active == true)
 			{
 				DrawRectangleRec(barrier[i].rec, player[i].playerColor);
 			}
 		}
+
+		//Draws points
 		DrawText(FormatText("%i", player[0].points), 340, 200, 50, player[0].playerColor);
 		DrawText(FormatText("%i", player[1].points), 425, 200, 50, player[1].playerColor);
 
-		barrierShooting();
 		EndDrawing();
 	}
 }
@@ -277,6 +276,17 @@ void collisions(int &counterBall, int &counterColor, Color &background) {
 	}
 }
 
+void playerLimits(int which)
+ {
+	for (int i = 0; i < playerMax; i++)
+	{
+		if (player[which].rec.y > screenHeight - player[i].rec.height)
+			player[which].rec.y = screenHeight - player[i].rec.height;
+		if (player[which].rec.y < 0)
+			player[which].rec.y = 0;
+	}
+}
+
 void barrierShooting() {
 	if (IsKeyPressed(KEY_SPACE)) {
 		barrier[0].active = true;
@@ -304,6 +314,19 @@ void barrierShooting() {
 	if (barrier[1].active == false) {
 		barrier[1].rec.x = player[1].rec.x;
 		barrier[1].rec.y = player[1].rec.y;
+	}
+}
+
+
+void powerUp() {
+	for (int i = 0; i < playerMax; i++)
+	{
+		if (player[i].rec.height > 0) { 
+			player[i].rec.height = 180; 
+			barrier[i].rec.height = 180;
+			player[i].rec.height--;
+			barrier[i].rec.height--;
+		}
 	}
 }
 
