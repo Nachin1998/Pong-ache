@@ -5,8 +5,9 @@ const int screenHeight = 450;
 const int playerMax = 2;
 const int ballMax = 10;
 const int powerUpMax = 20;
-const int win = 10;
+const int win = 100;
 const Vector2 ballPositionInit = { (float)screenWidth / 2, (float)screenHeight / 2 };
+Music music;
 
 struct players {
 	Rectangle rec;
@@ -31,7 +32,6 @@ struct balls {
 	bool active;
 }ball[ballMax];
 
-Music music;
 
 void endScreen() {
 
@@ -140,7 +140,7 @@ void game() {
 	ball[0].active = true;
 	
 	SetTargetFPS(60);
-
+	getPowerUp(1);
 	// Main game loop
 	while (!WindowShouldClose())
 	{
@@ -156,7 +156,7 @@ void game() {
 		playerLimits();
 
 		barrierShooting();
-		getPowerUp(1);
+		
 
 		//Init ball speed
 		for (int i = 0; i < ballMax; i++)
@@ -168,7 +168,6 @@ void game() {
 		}
 		
 		collisions(counterBall, counterColor, background);
-		//powerUp();
 		
 		//Goes to the end screen
 		if (player[0].points >= win || player[1].points >= win) {
@@ -305,10 +304,20 @@ void barrierShooting() {
 	}
 }
 
-void getPowerUp(int whichPlayer) {
-	if (player[whichPlayer].points%10==1) {
-		player[whichPlayer].rec.height += 10;
-		barrier[whichPlayer].rec.height += 10;
+void getPowerUp() {
+	for (int i = 0; i < playerMax; i++)
+	{
+		float sizeMax = player[i].rec.height+10;
+		int pointsMax = player[i].points + 10;
+		if (pointsMax == player[i].points) {
+			sizeMax += 5;
+			pointsMax += 10;
+		}
+		if (sizeMax>player[i].rec.height)
+		{
+			player[i].rec.height += 50;
+			barrier[i].rec.height += 50;
+		}
 	}
 }
 
