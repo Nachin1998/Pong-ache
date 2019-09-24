@@ -1,21 +1,12 @@
-#include "raylib.h"
+#include "Headers.h"
 
 const int screenWidth = 800;
 const int screenHeight = 450;
 const int playerMax = 2;
-const int ballMax = 50;
-const int win = 100;
+const int ballMax = 10;
+const int powerUpMax = 20;
+const int win = 10;
 const Vector2 ballPositionInit = { (float)screenWidth / 2, (float)screenHeight / 2 };
-
-void menu();
-void game();
-void endScreen();
-void collisions(int &counterBall, int &counterColor, Color &background);
-void playerLimits(int which);
-void barrierShooting();
-void powerUp();
-void multiplyBall(int &counterBall);
-void changeColor(int &counterColor, Color &background);
 
 struct players {
 	Rectangle rec;
@@ -39,12 +30,6 @@ struct balls {
 	int radius;
 	bool active;
 }ball[ballMax];
-
-/*struct ammunition {
-	Vector2 ammoSpeed;
-	Vector2 ammoPosition;
-	bool active;
-}ammo;*/
 
 Music music;
 
@@ -117,7 +102,7 @@ void game() {
 	int counterColor = 0;
 	int counterTiempo = 0;
 	int counterBall = 0;
-	Vector2 size = { 18, 120 };
+	Vector2 size = { 18.0f, 120.0f };
 
 	//Players
 	for (int i = 0; i < playerMax; i++)
@@ -138,7 +123,7 @@ void game() {
 	for (int i = 0; i < playerMax; i++)
 	{
 		barrier[i].rec.width = size.x/3;
-		barrier[i].rec.height = player[i].rec.height;
+		barrier[i].rec.height = size.y;
 		barrier[i].size = size;
 		barrier[i].active = false;	
 	}
@@ -153,25 +138,25 @@ void game() {
 		ball[i].active = false;
 	}
 	ball[0].active = true;
-
+	
 	SetTargetFPS(60);
 
 	// Main game loop
 	while (!WindowShouldClose())
 	{
-		//UpdateMusicStream(music);
+		UpdateMusicStream(music);
+
+		ClearBackground(background);
 
 		if (IsKeyDown(KEY_W)) player[0].rec.y -= 6.0f;
 		if (IsKeyDown(KEY_S)) player[0].rec.y += 6.0f;
-		playerLimits(0);
 
 		if (IsKeyDown(KEY_UP)) player[1].rec.y -= 6.0f;
 		if (IsKeyDown(KEY_DOWN)) player[1].rec.y += 6.0f;
-		playerLimits(1);
+		playerLimits();
 
 		barrierShooting();
-		barrier[0].rec.y == player[0].rec.y;
-		barrier[1].rec.y == player[1].rec.y;
+		getPowerUp(1);
 
 		//Init ball speed
 		for (int i = 0; i < ballMax; i++)
@@ -183,47 +168,48 @@ void game() {
 		}
 		
 		collisions(counterBall, counterColor, background);
-		powerUp();
+		//powerUp();
 		
 		//Goes to the end screen
 		if (player[0].points >= win || player[1].points >= win) {
 			endScreen();
 		}
-
-		// Draw
-		BeginDrawing();
-
-		ClearBackground(background);
-
-		//Draws all balls
-		for (int i = 0; i < ballMax; i++)
-		{
-			if (ball[i].active == true)
-				DrawCircleV(ball[i].ballPosition, 10, player[0].playerColor);
-		}
-		
-		//Draws players and barriers
-		for (int i = 0; i < playerMax; i++)
-		{
-			DrawRectangleRec(player[i].rec, player[i].playerColor);
-			if (barrier[i].active == true)
-			{
-				DrawRectangleRec(barrier[i].rec, player[i].playerColor);
-			}
-		}
-
-		//Draws points
-		DrawText(FormatText("%i", player[0].points), 340, 200, 50, player[0].playerColor);
-		DrawText(FormatText("%i", player[1].points), 425, 200, 50, player[1].playerColor);
-
-		EndDrawing();
+		drawObjects();
 	}
+}
+
+void drawObjects() {
+
+	BeginDrawing();
+
+	//Draws all balls
+	for (int i = 0; i < ballMax; i++)
+	{
+		if (ball[i].active == true)
+			DrawCircleV(ball[i].ballPosition, 10, player[0].playerColor);
+	}
+		
+	//Draws players and barriers
+	for (int i = 0; i < playerMax; i++)
+	{
+		DrawRectangleRec(player[i].rec, player[i].playerColor);
+		if (barrier[i].active == true)
+		{
+			DrawRectangleRec(barrier[i].rec, player[i].playerColor);
+		}
+	}
+	
+	//Draws points
+	DrawText(FormatText("%i", player[0].points), 340, 200, 50, player[0].playerColor);
+	DrawText(FormatText("%i", player[1].points), 425, 200, 50, player[1].playerColor);
+
+	EndDrawing();
 }
 
 void collisions(int &counterBall, int &counterColor, Color &background) {
 	for (int i = 0; i < ballMax; i++)
 	{
-		//Detects the colision with player and changes the color
+		//Detects the colision with players and changes the color
 		if (CheckCollisionCircleRec(ball[i].ballPosition, ball[i].radius, player[0].rec) ||
 			CheckCollisionCircleRec(ball[i].ballPosition, ball[i].radius, player[1].rec)) {
 
@@ -244,7 +230,7 @@ void collisions(int &counterBall, int &counterColor, Color &background) {
 			ball[i].ballSpeed.x *= -1.0f;
 			multiplyBall(counterBall);
 			if (ball[i].ballSpeed.x < 0) {
-				ball[i].ballPosition.x -= 15;
+				ball[i].ballPosition.x -= 15.0f;
 				changeColor(counterColor, background);
 			}
 			else {
@@ -276,18 +262,20 @@ void collisions(int &counterBall, int &counterColor, Color &background) {
 	}
 }
 
-void playerLimits(int which)
+void playerLimits()
  {
 	for (int i = 0; i < playerMax; i++)
 	{
-		if (player[which].rec.y > screenHeight - player[i].rec.height)
-			player[which].rec.y = screenHeight - player[i].rec.height;
-		if (player[which].rec.y < 0)
-			player[which].rec.y = 0;
+		if (player[i].rec.y > screenHeight - player[i].rec.height)
+			player[i].rec.y = screenHeight - player[i].rec.height;
+		if (player[i].rec.y < 0)
+			player[i].rec.y = 0;
 	}
 }
 
 void barrierShooting() {
+	barrier[0].rec.y == player[0].rec.y;
+	barrier[1].rec.y == player[1].rec.y;
 	if (IsKeyPressed(KEY_SPACE)) {
 		barrier[0].active = true;
 	}
@@ -317,16 +305,10 @@ void barrierShooting() {
 	}
 }
 
-
-void powerUp() {
-	for (int i = 0; i < playerMax; i++)
-	{
-		if (player[i].rec.height > 0) { 
-			player[i].rec.height = 180; 
-			barrier[i].rec.height = 180;
-			player[i].rec.height--;
-			barrier[i].rec.height--;
-		}
+void getPowerUp(int whichPlayer) {
+	if (player[whichPlayer].points%10==1) {
+		player[whichPlayer].rec.height += 10;
+		barrier[whichPlayer].rec.height += 10;
 	}
 }
 
