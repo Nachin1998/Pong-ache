@@ -1,10 +1,12 @@
 ﻿  Source.cpp
-c:\users\usuario\desktop\pong_v1\project2\source.cpp(212): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\usuario\desktop\pong_v1\project2\source.cpp(213): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\usuario\desktop\pong_v1\project2\source.cpp(227): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\usuario\desktop\pong_v1\project2\source.cpp(228): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\usuario\desktop\pong_v1\project2\source.cpp(276): warning C4553: '==': el operador no tiene efecto; ¿ha pensado en '='?
-c:\users\usuario\desktop\pong_v1\project2\source.cpp(277): warning C4553: '==': el operador no tiene efecto; ¿ha pensado en '='?
-c:\users\usuario\desktop\pong_v1\project2\source.cpp(362): warning C4326: el tipo de valor devuelto de 'main' debe ser 'int' en lugar de 'void'
-Source.obj : error LNK2019: sÝmbolo externo "void __cdecl getPowerUp(int)" (?getPowerUp@@YAXH@Z) sin resolver al que se hace referencia en la funci¾n "void __cdecl game(void)" (?game@@YAXXZ)
-C:\Users\Usuario\Desktop\pong_v1\Debug\Project2.exe : fatal error LNK1120: 1 externos sin resolver
+c:\users\administrador\desktop\pong_v1\project2\source.cpp(118): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\administrador\desktop\pong_v1\project2\source.cpp(119): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\administrador\desktop\pong_v1\project2\source.cpp(143): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\administrador\desktop\pong_v1\project2\source.cpp(229): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\administrador\desktop\pong_v1\project2\source.cpp(230): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\administrador\desktop\pong_v1\project2\source.cpp(244): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\administrador\desktop\pong_v1\project2\source.cpp(245): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\administrador\desktop\pong_v1\project2\source.cpp(295): warning C4553: "==": el resultado de la expresión no se usa. ¿Quiso decir "="?
+c:\users\administrador\desktop\pong_v1\project2\source.cpp(296): warning C4553: "==": el resultado de la expresión no se usa. ¿Quiso decir "="?
+c:\users\administrador\desktop\pong_v1\project2\source.cpp(367): warning C4326: el tipo de valor devuelto de 'main' debe ser 'int' en lugar de 'void'
+  Project2.vcxproj -> C:\Users\Administrador\Desktop\Pong_v1\Debug\Project2.exe
