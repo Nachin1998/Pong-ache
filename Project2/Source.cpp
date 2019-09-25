@@ -1,32 +1,13 @@
-#include "Headers.h"
 #include "Players.h"
+#include "Functions.h"
+#include "Barriers.h"
+#include "Balls.h"
+
 //MULTIPLICAR VARIABLES POR  * GetFrameTime() 
 
-
-const int screenWidth = 800;
-const int screenHeight = 450;
-const int ballMax = 15;
-const int powerUpMax = 20;
-const int movementSpeed = 6;
-const int win = 100;
-const Vector2 ballPositionInit = { (float)screenWidth / 2, (float)screenHeight / 2 };
 Music music;
 
 float timer = 0.0;
-
-struct Barrier {
-	Rectangle rec;
-	Vector2 size;
-	Color playerColor;
-	bool active;
-}barriers[playerMax];
-
-struct Ball {
-	Vector2 ballSpeed;
-	Vector2 ballPosition;
-	int radius;
-	bool active;
-}balls[ballMax];
 
 struct PowerUps {
 	Rectangle rec;
@@ -265,7 +246,10 @@ void collisions(int &counterBall, int &counterColor, Color &background) {
 		if (balls[i].ballPosition.x >= GetScreenWidth()) {
 			players[0].points++;
 			getPowerUp(1);
-			balls[i].ballPosition.x *= 1.5f;
+			if (i % 2 == 0)
+				balls[i].ballPosition.x *= 1.5f;
+			else
+				balls[i].ballPosition.y *= 1.5f;
 			balls[i].ballPosition = ballPositionInit;
 			changeColor(counterColor, background);
 		}
@@ -274,6 +258,11 @@ void collisions(int &counterBall, int &counterColor, Color &background) {
 		if (balls[i].ballPosition.x <= 0) {
 			players[1].points++;
 			getPowerUp(0);
+			if(i%2==0)
+				balls[i].ballPosition.x *= 1.5f;
+			else
+				balls[i].ballPosition.y *= 1.5f;
+			
 			balls[i].ballPosition = ballPositionInit;
 			changeColor(counterColor, background);
 		}
@@ -341,6 +330,8 @@ void multiplyBall(int &counterBall) {
 			balls[i].ballPosition = balls[0].ballPosition;
 			if (i % 2 == 0)
 				balls[i].ballSpeed.x *= -1.1f;
+			else
+				balls[i].ballSpeed.y *= -1.1f;
 			
 		}
 	}
@@ -365,7 +356,7 @@ void changeColor(int &counterColor, Color &background) {
 
 void main()
 {
-	InitWindow(screenWidth, screenHeight, "We're grooovin");
+	InitWindow(screenWidth, screenHeight, "Pongacho");
 	menu();
 	CloseWindow();
 }

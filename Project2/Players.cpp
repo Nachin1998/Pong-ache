@@ -1,6 +1,7 @@
 #include "Players.h"
+#include "gameManager.h"
 Player players[playerMax];
-Vector2 size = { 18.0f, 120.0f };
+
 void setPlayerParameters() {
 	for (int i = 0; i < playerMax; i++)
 	{
