@@ -141,6 +141,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Audio.cpp" />
     <ClCompile Include="Balls.cpp" />
     <ClCompile Include="Barriers.cpp" />
     <ClCompile Include="Drawing.cpp" />
@@ -150,10 +151,10 @@
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Audio.h" />
     <ClInclude Include="Balls.h" />
     <ClInclude Include="Barriers.h" />
     <ClInclude Include="Drawing.h" />
-    <ClInclude Include="Functions.h" />
     <ClInclude Include="gameManager.h" />
     <ClInclude Include="Players.h" />
     <ClInclude Include="size.h" />
