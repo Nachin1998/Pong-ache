@@ -1,4 +1,6 @@
-#pragma once
+#ifndef PLAYERS_H
+#define PLAYERS_H
+
 #include "raylib.h"
 
 const int playerMax = 2;
@@ -12,3 +14,6 @@ struct Player {
 
 extern Player players[playerMax];
 void setPlayerParameters();
+void playerLimits();
+
+#endif

@@ -13,3 +13,4 @@ struct Barrier {
 
 extern Barrier barriers[barrierMax];
 void setBarrierParameters();
+void barrierShooting();

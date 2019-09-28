@@ -1,5 +1,5 @@
-/*#include "Drawing.h"
-#include "Players.h"
+#include "Drawing.h"
+
 void drawObjects() {
 
 	BeginDrawing();
@@ -7,8 +7,8 @@ void drawObjects() {
 	//Draws all balls
 	for (int i = 0; i < ballMax; i++)
 	{
-		if (ball[i].active == true)
-			DrawCircleV(ball[i].ballPosition, 10, players[0].playerColor);
+		if (balls[i].active == true)
+			DrawCircleV(balls[i].ballPosition, 10, players[0].playerColor);
 	}
 
 	//Draws players and barriers
@@ -26,4 +26,4 @@ void drawObjects() {
 	DrawText(FormatText("%i", players[1].points), 425, 200, 50, players[1].playerColor);
 
 	EndDrawing();
-}*/
+}

@@ -12,3 +12,5 @@ struct Ball {
 
 extern Ball balls[ballMax];
 void setBallParameters();
+void initBallSpeed();
+void multiplyBall(int &counterBall);

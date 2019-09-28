@@ -1,10 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Archivos de origen">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
     <Filter Include="Archivos de encabezado">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
@@ -13,54 +9,91 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Audio">
+      <UniqueIdentifier>{855ccc79-e5a5-4537-8094-9bc2c9d359c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Entities">
+      <UniqueIdentifier>{4e8a52e1-8a95-44bf-92f8-14b50fb506e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Entities\Players">
+      <UniqueIdentifier>{91f2288a-fd0b-41a1-b5d7-29c6c1e93b6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Entities\Balls">
+      <UniqueIdentifier>{1e32a6f8-9c3d-4a5a-ac06-e022b71c57ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Entities\Barriers">
+      <UniqueIdentifier>{69bc2b90-ba32-4738-9876-f417f96b7856}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scenes">
+      <UniqueIdentifier>{92efe48e-fdea-4d22-ba67-886fe210d8cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scenes\Main menu">
+      <UniqueIdentifier>{b5acd70a-2de8-4a43-b2af-b4c30d37ce68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scenes\End screen">
+      <UniqueIdentifier>{728bd32d-a775-45cf-bd51-6827ada672e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scenes\Game">
+      <UniqueIdentifier>{8e14e23c-8c35-43a5-9dd4-913f24669778}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source.cpp">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
-    <ClCompile Include="Players.cpp">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
     <ClCompile Include="gameManager.cpp">
       <Filter>Archivos de recursos</Filter>
     </ClCompile>
-    <ClCompile Include="Drawing.cpp">
-      <Filter>Archivos de recursos</Filter>
+    <ClCompile Include="Audio.cpp">
+      <Filter>Audio</Filter>
     </ClCompile>
-    <ClCompile Include="Barriers.cpp">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
-    <ClCompile Include="size.cpp">
-      <Filter>Archivos de recursos</Filter>
+    <ClCompile Include="Players.cpp">
+      <Filter>Entities\Players</Filter>
     </ClCompile>
     <ClCompile Include="Balls.cpp">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Entities\Balls</Filter>
     </ClCompile>
-    <ClCompile Include="Audio.cpp">
-      <Filter>Archivos de recursos</Filter>
+    <ClCompile Include="Barriers.cpp">
+      <Filter>Entities\Barriers</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="mainMenu.cpp">
+      <Filter>Scenes\Main menu</Filter>
+    </ClCompile>
+    <ClCompile Include="endScreen.cpp">
+      <Filter>Scenes\End screen</Filter>
+    </ClCompile>
+    <ClCompile Include="game.cpp">
+      <Filter>Scenes\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Drawing.cpp">
+      <Filter>Archivos de encabezado</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Players.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="gameManager.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="Drawing.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Barriers.h">
-      <Filter>Archivos de encabezado</Filter>
+    <ClInclude Include="Audio.h">
+      <Filter>Audio</Filter>
     </ClInclude>
-    <ClInclude Include="size.h">
-      <Filter>Archivos de encabezado</Filter>
+    <ClInclude Include="Players.h">
+      <Filter>Entities\Players</Filter>
     </ClInclude>
     <ClInclude Include="Balls.h">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Entities\Balls</Filter>
     </ClInclude>
-    <ClInclude Include="Audio.h">
-      <Filter>Archivos de encabezado</Filter>
+    <ClInclude Include="Barriers.h">
+      <Filter>Entities\Barriers</Filter>
+    </ClInclude>
+    <ClInclude Include="mainMenu.h">
+      <Filter>Scenes\Main menu</Filter>
+    </ClInclude>
+    <ClInclude Include="game.h">
+      <Filter>Scenes\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="endScreen.h">
+      <Filter>Scenes\End screen</Filter>
+    </ClInclude>
+    <ClInclude Include="gameManager.h">
+      <Filter>Archivos de recursos</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
