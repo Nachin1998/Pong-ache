@@ -1,3 +1,7 @@
-#pragma once
-#include "raylib.h"
-void game();
+#ifndef GAME_H
+#define GAME_H
+
+namespace Ignacio {
+	void game();
+}
+#endif

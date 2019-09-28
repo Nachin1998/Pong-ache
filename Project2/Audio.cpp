@@ -1,13 +1,15 @@
 #include "Audio.h"
 
-Music gameMusic;
+namespace Ignacio {
+	Music gameMusic;
 
-void initAudio() {
-	InitAudioDevice();
-	gameMusic = LoadMusicStream("Audio/Megalovania.ogg");
-}
+	void initAudio() {
+		InitAudioDevice();
+		gameMusic = LoadMusicStream("Audio/Megalovania.ogg");
+	}
 
-void closeAudio() {
-	UnloadMusicStream(gameMusic);
-	CloseAudioDevice();
+	void closeAudio() {
+		UnloadMusicStream(gameMusic);
+		CloseAudioDevice();
+	}
 }

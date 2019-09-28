@@ -1,7 +1,7 @@
-#pragma once
-#include "raylib.h"
-#include "Players.h"
-#include "Barriers.h"
-#include "Balls.h"
+#ifndef DRAWING_H
+#define DRAWING_H
 
-void drawObjects();
+namespace Ignacio {
+	void drawObjects();
+}
+#endif

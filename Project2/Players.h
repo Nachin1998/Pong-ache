@@ -3,17 +3,19 @@
 
 #include "raylib.h"
 
-const int playerMax = 2;
+namespace Ignacio {
+	const int playerMax = 2;
 
-struct Player {
-	Rectangle rec;
-	Vector2 size;
-	Color playerColor;
-	int points;
-};
+	struct Player {
+		Rectangle rec;
+		Vector2 size;
+		Color playerColor;
+		int points;
+	};
 
-extern Player players[playerMax];
-void setPlayerParameters();
-void playerLimits();
+	extern Player players[playerMax];
+	void setPlayerParameters();
+	void playerLimits();
+}
 
 #endif

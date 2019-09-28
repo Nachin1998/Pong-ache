@@ -1,16 +1,20 @@
-#pragma once
+#ifndef BALLS_H
+#define BALLS_H
 #include "raylib.h"
 
-const int ballMax = 15;
+namespace Ignacio {
+	const int ballMax = 20;
 
-struct Ball {
-	Vector2 ballSpeed;
-	Vector2 ballPosition;
-	int radius;
-	bool active;
-};
+	struct Ball {
+		Vector2 ballSpeed;
+		Vector2 ballPosition;
+		int radius;
+		bool active;
+	};
 
-extern Ball balls[ballMax];
-void setBallParameters();
-void initBallSpeed();
-void multiplyBall(int &counterBall);
+	extern Ball balls[ballMax];
+	void setBallParameters();
+	void initBallSpeed();
+	void multiplyBall(int &counterBall);
+}
+#endif

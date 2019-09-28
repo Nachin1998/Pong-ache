@@ -1,19 +1,11 @@
-#pragma once
+#ifndef AUDIO_H
+#define AUDIO_H
 #include "raylib.h"
 
-extern Music gameMusic;
+namespace Ignacio {
+	extern Music gameMusic;
 
-void initAudio();
-void closeAudio();
-/*En el void game
-music = LoadMusicStream("Audio/Megalovania.ogg");
-
-PlayMusicStream(music);
-*/
-
-
-/*En el game loop
-
-UpdateMusicStream(music);
-
-*/
+	void initAudio();
+	void closeAudio();
+}
+#endif

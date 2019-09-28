@@ -148,10 +148,14 @@
     <ClCompile Include="Audio.cpp" />
     <ClCompile Include="Balls.cpp" />
     <ClCompile Include="Barriers.cpp" />
+    <ClCompile Include="changeColor.cpp" />
+    <ClCompile Include="collisions.cpp" />
     <ClCompile Include="Drawing.cpp" />
     <ClCompile Include="endScreen.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="gameManager.cpp" />
+    <ClCompile Include="getSizeUp.cpp" />
+    <ClCompile Include="inputs.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mainMenu.cpp" />
     <ClCompile Include="Players.cpp" />
@@ -160,10 +164,14 @@
     <ClInclude Include="Audio.h" />
     <ClInclude Include="Balls.h" />
     <ClInclude Include="Barriers.h" />
+    <ClInclude Include="changeColor.h" />
+    <ClInclude Include="collisions.h" />
     <ClInclude Include="Drawing.h" />
     <ClInclude Include="endScreen.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="gameManager.h" />
+    <ClInclude Include="getSizeUp.h" />
+    <ClInclude Include="inputs.h" />
     <ClInclude Include="mainMenu.h" />
     <ClInclude Include="Players.h" />
   </ItemGroup>

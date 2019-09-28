@@ -1,14 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Archivos de encabezado">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="Archivos de recursos">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
     <Filter Include="Audio">
       <UniqueIdentifier>{855ccc79-e5a5-4537-8094-9bc2c9d359c2}</UniqueIdentifier>
     </Filter>
@@ -36,10 +28,32 @@
     <Filter Include="Scenes\Game">
       <UniqueIdentifier>{8e14e23c-8c35-43a5-9dd4-913f24669778}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Drawing">
+      <UniqueIdentifier>{ab3e56e4-d63d-4b91-9005-6cc386fb3cf3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Manager">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Game Logic">
+      <UniqueIdentifier>{abeec821-a190-47d2-bee8-a2664441a36c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Logic\Collisions">
+      <UniqueIdentifier>{181f2ffc-8f09-4b06-93c1-2b7cb0bacfef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Logic\Color changer">
+      <UniqueIdentifier>{08a49f9e-657f-4c13-9f53-4319d8501b56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Logic\Player Size Up">
+      <UniqueIdentifier>{4fa6000d-1b2f-4b26-8aed-d91ea1d3a41e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game Logic\Inputs">
+      <UniqueIdentifier>{3cd4385f-7ffe-4938-ac77-871a6083f9ee}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="gameManager.cpp">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Game Manager</Filter>
     </ClCompile>
     <ClCompile Include="Audio.cpp">
       <Filter>Audio</Filter>
@@ -64,13 +78,22 @@
       <Filter>Scenes\Game</Filter>
     </ClCompile>
     <ClCompile Include="Drawing.cpp">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Drawing</Filter>
+    </ClCompile>
+    <ClCompile Include="collisions.cpp">
+      <Filter>Game Logic\Collisions</Filter>
+    </ClCompile>
+    <ClCompile Include="changeColor.cpp">
+      <Filter>Game Logic\Color changer</Filter>
+    </ClCompile>
+    <ClCompile Include="getSizeUp.cpp">
+      <Filter>Game Logic\Player Size Up</Filter>
+    </ClCompile>
+    <ClCompile Include="inputs.cpp">
+      <Filter>Game Logic\Inputs</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Drawing.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="Audio.h">
       <Filter>Audio</Filter>
     </ClInclude>
@@ -93,7 +116,22 @@
       <Filter>Scenes\End screen</Filter>
     </ClInclude>
     <ClInclude Include="gameManager.h">
-      <Filter>Archivos de recursos</Filter>
+      <Filter>Game Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Drawing.h">
+      <Filter>Drawing</Filter>
+    </ClInclude>
+    <ClInclude Include="collisions.h">
+      <Filter>Game Logic\Collisions</Filter>
+    </ClInclude>
+    <ClInclude Include="changeColor.h">
+      <Filter>Game Logic\Color changer</Filter>
+    </ClInclude>
+    <ClInclude Include="getSizeUp.h">
+      <Filter>Game Logic\Player Size Up</Filter>
+    </ClInclude>
+    <ClInclude Include="inputs.h">
+      <Filter>Game Logic\Inputs</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

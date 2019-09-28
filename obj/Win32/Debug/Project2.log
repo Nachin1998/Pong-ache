@@ -1,21 +1,8 @@
 ﻿  Balls.cpp
-  Barriers.cpp
-c:\users\usuario\desktop\pong_v1\project2\barriers.cpp(16): warning C4553: '==': el operador no tiene efecto; ¿ha pensado en '='?
-c:\users\usuario\desktop\pong_v1\project2\barriers.cpp(17): warning C4553: '==': el operador no tiene efecto; ¿ha pensado en '='?
-  Drawing.cpp
-  endScreen.cpp
-  game.cpp
-  gameManager.cpp
-c:\users\usuario\desktop\pong_v1\project2\gamemanager.cpp(36): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\usuario\desktop\pong_v1\project2\gamemanager.cpp(37): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\usuario\desktop\pong_v1\project2\gamemanager.cpp(51): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\usuario\desktop\pong_v1\project2\gamemanager.cpp(52): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-  main.cpp
-c:\users\usuario\desktop\pong_v1\project2\main.cpp(4): warning C4326: el tipo de valor devuelto de 'main' debe ser 'int' en lugar de 'void'
-  mainMenu.cpp
-  Players.cpp
-c:\users\usuario\desktop\pong_v1\project2\players.cpp(8): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\usuario\desktop\pong_v1\project2\players.cpp(15): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
-c:\users\usuario\desktop\pong_v1\project2\players.cpp(16): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+  collisions.cpp
+c:\users\usuario\desktop\pong_v1\project2\collisions.cpp(9): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\usuario\desktop\pong_v1\project2\collisions.cpp(10): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\usuario\desktop\pong_v1\project2\collisions.cpp(24): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\usuario\desktop\pong_v1\project2\collisions.cpp(25): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
   Generando código...
   Project2.vcxproj -> C:\Users\Usuario\Desktop\pong_v1\bin\Win32\Debug\Project2.exe
