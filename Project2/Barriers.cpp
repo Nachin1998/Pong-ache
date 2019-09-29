@@ -1,6 +1,7 @@
 #include "Barriers.h"
+#include "Players.h"
 
-#include "gameManager.h"
+#include "variables.h"
 
 namespace Ignacio {
 	Barrier barriers[barrierMax];
@@ -15,8 +16,7 @@ namespace Ignacio {
 		}
 	}
 	void barrierShooting() {
-		barriers[0].rec.y == players[0].rec.y;
-		barriers[1].rec.y == players[1].rec.y;
+
 		if (IsKeyPressed(KEY_SPACE)) {
 			barriers[0].active = true;
 		}

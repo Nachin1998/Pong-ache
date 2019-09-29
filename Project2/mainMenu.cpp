@@ -1,5 +1,4 @@
 #include "gameManager.h"
-#include "raylib.h"
 
 namespace Ignacio {
 	void menu() {
@@ -15,16 +14,16 @@ namespace Ignacio {
 			ClearBackground(BLACK);
 
 			DrawText("Pong", GetScreenWidth() / 2 - 70, screenHeight / 2 - 200, 50, LIGHTGRAY);
-			DrawText("(No apto para epilepticos)", GetScreenWidth() / 2 - 105, screenHeight / 2 - 140, 15, LIGHTGRAY);
+			DrawText("(Epilepsy Warning)", GetScreenWidth() / 2 - 100, screenHeight / 2 - 140, 20, LIGHTGRAY);
 
-			DrawText("Start", GetScreenWidth() / 2 - 150, screenHeight / 2, 20, LIGHTGRAY);
-			DrawText("(Enter)", GetScreenWidth() / 2 - 160, screenHeight / 2 + 20, 20, LIGHTGRAY);
+			DrawText("Start", GetScreenWidth() / 2 - 180, screenHeight / 2, 20, LIGHTGRAY);
+			DrawText("(Enter)", GetScreenWidth() / 2 - 190, screenHeight / 2 + 20, 20, LIGHTGRAY);
 
-			DrawText("Exit", GetScreenWidth() / 2 + 70, screenHeight / 2, 20, LIGHTGRAY);
-			DrawText("(Escape)", GetScreenWidth() / 2 + 45, screenHeight / 2 + 20, 20, LIGHTGRAY);
+			DrawText("Exit", GetScreenWidth() / 2 + 120, screenHeight / 2, 20, LIGHTGRAY);
+			DrawText("(Escape)", GetScreenWidth() / 2 + 94, screenHeight / 2 + 20, 20, LIGHTGRAY);
 
-			DrawText("Space: player 1 skill", GetScreenWidth() / 2 - 230, screenHeight / 2 + 50, 20, LIGHTGRAY);
-			DrawText("Right Ctrl: player 2 skill", GetScreenWidth() / 2 - 10, screenHeight / 2 + 50, 20, LIGHTGRAY);
+			DrawText("Space: player 1 skill", GetScreenWidth() / 2 - 250, screenHeight / 2 + 50, 20, LIGHTGRAY);
+			DrawText("Right Ctrl: player 2 skill", GetScreenWidth() / 2 + 25, screenHeight / 2 + 50, 20, LIGHTGRAY);
 
 			if (IsKeyPressed(KEY_ENTER)) game();
 

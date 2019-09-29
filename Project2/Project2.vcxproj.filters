@@ -50,6 +50,9 @@
     <Filter Include="Game Logic\Inputs">
       <UniqueIdentifier>{3cd4385f-7ffe-4938-ac77-871a6083f9ee}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game Manager\Variables">
+      <UniqueIdentifier>{a08699c8-3e43-4790-8a4d-f46f2b86983e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="gameManager.cpp">
@@ -132,6 +135,9 @@
     </ClInclude>
     <ClInclude Include="inputs.h">
       <Filter>Game Logic\Inputs</Filter>
+    </ClInclude>
+    <ClInclude Include="variables.h">
+      <Filter>Game Manager\Variables</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

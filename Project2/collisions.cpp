@@ -1,9 +1,21 @@
 #include "collisions.h"
 
-#include "gameManager.h"
+#include "Players.h"
+#include "Balls.h"
+#include "Barriers.h"
+
+#include "variables.h"
+#include "getSizeUp.h"
+
+#include "changeColor.h"
+
+#include <cstdlib>
+#include <ctime>
 
 namespace Ignacio {
+	
 	void collisions(int &counterBall, int &counterColor, Color &background) {
+
 		for (int i = 0; i < ballMax; i++)
 		{
 			//Detects the colision with players and changes the color
@@ -46,11 +58,9 @@ namespace Ignacio {
 			if (balls[i].ballPosition.x >= GetScreenWidth()) {
 				players[0].points++;
 				getSizeUp(1);
-				if (i % 2 == 0)
-					balls[i].ballPosition.x *= 1.5f;
-				else
-					balls[i].ballPosition.y *= 1.5f;
-				balls[i].ballPosition = ballPositionInit;
+
+				balls[i].ballPosition.x = ballPositionInit.x +(rand() % 50);
+				balls[i].ballPosition.y = ballPositionInit.y +(rand() % 50);
 				changeColor(counterColor, background);
 			}
 
@@ -58,12 +68,9 @@ namespace Ignacio {
 			if (balls[i].ballPosition.x <= 0) {
 				players[1].points++;
 				getSizeUp(0);
-				if (i % 2 == 0)
-					balls[i].ballPosition.x *= 1.5f;
-				else
-					balls[i].ballPosition.y *= 1.5f;
 
-				balls[i].ballPosition = ballPositionInit;
+				balls[i].ballPosition.x = ballPositionInit.x +(rand() % 50);
+				balls[i].ballPosition.y = ballPositionInit.y +(rand() % 50);
 				changeColor(counterColor, background);
 			}
 		}

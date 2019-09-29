@@ -1,5 +1,5 @@
 #include "Players.h"
-#include "gameManager.h"
+#include "variables.h"
 
 namespace Ignacio {
 	Player players[playerMax];

@@ -1,6 +1,9 @@
 #include "inputs.h"
 
-#include "gameManager.h"
+#include "variables.h"
+
+#include "Players.h"
+
 
 namespace Ignacio {
 	void inputs() {

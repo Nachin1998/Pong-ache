@@ -31,6 +31,7 @@ namespace Ignacio {
 
 			//Goes to the end screen
 			if (players[0].points >= win || players[1].points >= win) {
+				StopMusicStream(gameMusic);
 				endScreen();
 			}
 			drawObjects();

@@ -2,14 +2,18 @@
 
 namespace Ignacio {
 	Music gameMusic;
+	Music endScreenMusic;
 
 	void initAudio() {
 		InitAudioDevice();
-		gameMusic = LoadMusicStream("Audio/Megalovania.ogg");
+		SetMasterVolume(masterVolume);
+		gameMusic = LoadMusicStream("Music/Megalovania.ogg");
+		endScreenMusic = LoadMusicStream("Music/EndScreenSong.ogg");
 	}
 
 	void closeAudio() {
 		UnloadMusicStream(gameMusic);
+		UnloadMusicStream(endScreenMusic);
 		CloseAudioDevice();
 	}
 }

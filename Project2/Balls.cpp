@@ -1,5 +1,6 @@
 #include "Balls.h"
-#include "gameManager.h"
+
+#include "variables.h"
 
 namespace Ignacio {
 	Ball balls[ballMax];

@@ -1,7 +1,8 @@
 #include "gameManager.h"
 
 using namespace Ignacio;
-void main()
+
+int main()
 {
 	play();
 }
