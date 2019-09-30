@@ -1,143 +1,154 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Audio">
-      <UniqueIdentifier>{855ccc79-e5a5-4537-8094-9bc2c9d359c2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Entities">
-      <UniqueIdentifier>{4e8a52e1-8a95-44bf-92f8-14b50fb506e4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Entities\Players">
-      <UniqueIdentifier>{91f2288a-fd0b-41a1-b5d7-29c6c1e93b6b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Entities\Balls">
-      <UniqueIdentifier>{1e32a6f8-9c3d-4a5a-ac06-e022b71c57ca}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Entities\Barriers">
-      <UniqueIdentifier>{69bc2b90-ba32-4738-9876-f417f96b7856}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Scenes">
       <UniqueIdentifier>{92efe48e-fdea-4d22-ba67-886fe210d8cc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Scenes\Main menu">
-      <UniqueIdentifier>{b5acd70a-2de8-4a43-b2af-b4c30d37ce68}</UniqueIdentifier>
+    <Filter Include="audio">
+      <UniqueIdentifier>{855ccc79-e5a5-4537-8094-9bc2c9d359c2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Scenes\End screen">
-      <UniqueIdentifier>{728bd32d-a775-45cf-bd51-6827ada672e0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Scenes\Game">
-      <UniqueIdentifier>{8e14e23c-8c35-43a5-9dd4-913f24669778}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Drawing">
+    <Filter Include="drawing">
       <UniqueIdentifier>{ab3e56e4-d63d-4b91-9005-6cc386fb3cf3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Game Manager">
+    <Filter Include="entities">
+      <UniqueIdentifier>{4e8a52e1-8a95-44bf-92f8-14b50fb506e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="entities\balls">
+      <UniqueIdentifier>{1e32a6f8-9c3d-4a5a-ac06-e022b71c57ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="entities\barriers">
+      <UniqueIdentifier>{69bc2b90-ba32-4738-9876-f417f96b7856}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scenes\end_screen">
+      <UniqueIdentifier>{728bd32d-a775-45cf-bd51-6827ada672e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scenes\game">
+      <UniqueIdentifier>{8e14e23c-8c35-43a5-9dd4-913f24669778}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scenes\main_menu">
+      <UniqueIdentifier>{b5acd70a-2de8-4a43-b2af-b4c30d37ce68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scenes\pause_menu">
+      <UniqueIdentifier>{338b65ab-85a5-464e-9d94-34712d7df604}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game_manager">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Game Logic">
+    <Filter Include="game_logic">
       <UniqueIdentifier>{abeec821-a190-47d2-bee8-a2664441a36c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Game Logic\Collisions">
+    <Filter Include="game_logic\collisions">
       <UniqueIdentifier>{181f2ffc-8f09-4b06-93c1-2b7cb0bacfef}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Game Logic\Color changer">
+    <Filter Include="game_logic\color_changer">
       <UniqueIdentifier>{08a49f9e-657f-4c13-9f53-4319d8501b56}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Game Logic\Player Size Up">
-      <UniqueIdentifier>{4fa6000d-1b2f-4b26-8aed-d91ea1d3a41e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Game Logic\Inputs">
+    <Filter Include="game_logic\inputs">
       <UniqueIdentifier>{3cd4385f-7ffe-4938-ac77-871a6083f9ee}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Game Manager\Variables">
-      <UniqueIdentifier>{a08699c8-3e43-4790-8a4d-f46f2b86983e}</UniqueIdentifier>
+    <Filter Include="game_logic\player_size_up">
+      <UniqueIdentifier>{4fa6000d-1b2f-4b26-8aed-d91ea1d3a41e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="entities\players">
+      <UniqueIdentifier>{91f2288a-fd0b-41a1-b5d7-29c6c1e93b6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main">
+      <UniqueIdentifier>{b0322d28-03b5-4881-b951-57432942749d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="gameManager.cpp">
-      <Filter>Game Manager</Filter>
+    <ClCompile Include="..\src\Drawing\Drawing.cpp">
+      <Filter>drawing</Filter>
     </ClCompile>
-    <ClCompile Include="Audio.cpp">
-      <Filter>Audio</Filter>
+    <ClCompile Include="..\src\game_manager\gameManager.cpp">
+      <Filter>game_manager</Filter>
     </ClCompile>
-    <ClCompile Include="Players.cpp">
-      <Filter>Entities\Players</Filter>
+    <ClCompile Include="..\src\scenes\end_screen\endScreen.cpp">
+      <Filter>Scenes\end_screen</Filter>
     </ClCompile>
-    <ClCompile Include="Balls.cpp">
-      <Filter>Entities\Balls</Filter>
+    <ClCompile Include="..\src\scenes\game\game.cpp">
+      <Filter>Scenes\game</Filter>
     </ClCompile>
-    <ClCompile Include="Barriers.cpp">
-      <Filter>Entities\Barriers</Filter>
+    <ClCompile Include="..\src\scenes\main _menu\mainMenu.cpp">
+      <Filter>Scenes\main_menu</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="mainMenu.cpp">
-      <Filter>Scenes\Main menu</Filter>
+    <ClCompile Include="..\src\scenes\pause_menu\pauseMenu.cpp">
+      <Filter>Scenes\pause_menu</Filter>
     </ClCompile>
-    <ClCompile Include="endScreen.cpp">
-      <Filter>Scenes\End screen</Filter>
+    <ClCompile Include="..\src\main.cpp">
+      <Filter>main</Filter>
     </ClCompile>
-    <ClCompile Include="game.cpp">
-      <Filter>Scenes\Game</Filter>
+    <ClCompile Include="..\src\audio\Audio.cpp">
+      <Filter>audio</Filter>
     </ClCompile>
-    <ClCompile Include="Drawing.cpp">
-      <Filter>Drawing</Filter>
+    <ClCompile Include="..\src\entities\players\Players.cpp">
+      <Filter>entities\players</Filter>
     </ClCompile>
-    <ClCompile Include="collisions.cpp">
-      <Filter>Game Logic\Collisions</Filter>
+    <ClCompile Include="..\src\entities\barriers\Barriers.cpp">
+      <Filter>entities\barriers</Filter>
     </ClCompile>
-    <ClCompile Include="changeColor.cpp">
-      <Filter>Game Logic\Color changer</Filter>
+    <ClCompile Include="..\src\entities\balls\Balls.cpp">
+      <Filter>entities\balls</Filter>
     </ClCompile>
-    <ClCompile Include="getSizeUp.cpp">
-      <Filter>Game Logic\Player Size Up</Filter>
+    <ClCompile Include="..\src\game_logic\collisions\collisions.cpp">
+      <Filter>game_logic\collisions</Filter>
     </ClCompile>
-    <ClCompile Include="inputs.cpp">
-      <Filter>Game Logic\Inputs</Filter>
+    <ClCompile Include="..\src\game_logic\color_changer\changeColor.cpp">
+      <Filter>game_logic\color_changer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\game_logic\get_size_up\getSizeUp.cpp">
+      <Filter>game_logic\player_size_up</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\game_logic\inputs\inputs.cpp">
+      <Filter>game_logic\inputs</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Audio.h">
-      <Filter>Audio</Filter>
+    <ClInclude Include="..\src\Audio\Audio.h">
+      <Filter>audio</Filter>
     </ClInclude>
-    <ClInclude Include="Players.h">
-      <Filter>Entities\Players</Filter>
+    <ClInclude Include="..\src\Drawing\Drawing.h">
+      <Filter>drawing</Filter>
     </ClInclude>
-    <ClInclude Include="Balls.h">
-      <Filter>Entities\Balls</Filter>
+    <ClInclude Include="..\src\game_manager\gameManager.h">
+      <Filter>game_manager</Filter>
     </ClInclude>
-    <ClInclude Include="Barriers.h">
-      <Filter>Entities\Barriers</Filter>
+    <ClInclude Include="..\src\game_manager\variables.h">
+      <Filter>game_manager</Filter>
     </ClInclude>
-    <ClInclude Include="mainMenu.h">
-      <Filter>Scenes\Main menu</Filter>
+    <ClInclude Include="..\src\scenes\end_screen\endScreen.h">
+      <Filter>Scenes\end_screen</Filter>
     </ClInclude>
-    <ClInclude Include="game.h">
-      <Filter>Scenes\Game</Filter>
+    <ClInclude Include="..\src\scenes\game\game.h">
+      <Filter>Scenes\game</Filter>
     </ClInclude>
-    <ClInclude Include="endScreen.h">
-      <Filter>Scenes\End screen</Filter>
+    <ClInclude Include="..\src\scenes\main _menu\mainMenu.h">
+      <Filter>Scenes\main_menu</Filter>
     </ClInclude>
-    <ClInclude Include="gameManager.h">
-      <Filter>Game Manager</Filter>
+    <ClInclude Include="..\src\scenes\pause_menu\pauseMenu.h">
+      <Filter>Scenes\pause_menu</Filter>
     </ClInclude>
-    <ClInclude Include="Drawing.h">
-      <Filter>Drawing</Filter>
+    <ClInclude Include="..\src\entities\players\Players.h">
+      <Filter>entities\players</Filter>
     </ClInclude>
-    <ClInclude Include="collisions.h">
-      <Filter>Game Logic\Collisions</Filter>
+    <ClInclude Include="..\src\entities\barriers\Barriers.h">
+      <Filter>entities\barriers</Filter>
     </ClInclude>
-    <ClInclude Include="changeColor.h">
-      <Filter>Game Logic\Color changer</Filter>
+    <ClInclude Include="..\src\entities\balls\Balls.h">
+      <Filter>entities\balls</Filter>
     </ClInclude>
-    <ClInclude Include="getSizeUp.h">
-      <Filter>Game Logic\Player Size Up</Filter>
+    <ClInclude Include="..\src\game_logic\collisions\collisions.h">
+      <Filter>game_logic\collisions</Filter>
     </ClInclude>
-    <ClInclude Include="inputs.h">
-      <Filter>Game Logic\Inputs</Filter>
+    <ClInclude Include="..\src\game_logic\color_changer\changeColor.h">
+      <Filter>game_logic\color_changer</Filter>
     </ClInclude>
-    <ClInclude Include="variables.h">
-      <Filter>Game Manager\Variables</Filter>
+    <ClInclude Include="..\src\game_logic\get_size_up\getSizeUp.h">
+      <Filter>game_logic\player_size_up</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\game_logic\inputs\inputs.h">
+      <Filter>game_logic\inputs</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

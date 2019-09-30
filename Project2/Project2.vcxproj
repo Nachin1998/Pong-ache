@@ -18,6 +18,40 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\audio\Audio.cpp" />
+    <ClCompile Include="..\src\Drawing\Drawing.cpp" />
+    <ClCompile Include="..\src\entities\balls\Balls.cpp" />
+    <ClCompile Include="..\src\entities\barriers\Barriers.cpp" />
+    <ClCompile Include="..\src\entities\players\Players.cpp" />
+    <ClCompile Include="..\src\game_logic\collisions\collisions.cpp" />
+    <ClCompile Include="..\src\game_logic\color_changer\changeColor.cpp" />
+    <ClCompile Include="..\src\game_logic\get_size_up\getSizeUp.cpp" />
+    <ClCompile Include="..\src\game_logic\inputs\inputs.cpp" />
+    <ClCompile Include="..\src\game_manager\gameManager.cpp" />
+    <ClCompile Include="..\src\main.cpp" />
+    <ClCompile Include="..\src\scenes\end_screen\endScreen.cpp" />
+    <ClCompile Include="..\src\scenes\game\game.cpp" />
+    <ClCompile Include="..\src\scenes\main _menu\mainMenu.cpp" />
+    <ClCompile Include="..\src\scenes\pause_menu\pauseMenu.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\Audio\Audio.h" />
+    <ClInclude Include="..\src\Drawing\Drawing.h" />
+    <ClInclude Include="..\src\entities\balls\Balls.h" />
+    <ClInclude Include="..\src\entities\barriers\Barriers.h" />
+    <ClInclude Include="..\src\entities\players\Players.h" />
+    <ClInclude Include="..\src\game_logic\collisions\collisions.h" />
+    <ClInclude Include="..\src\game_logic\color_changer\changeColor.h" />
+    <ClInclude Include="..\src\game_logic\get_size_up\getSizeUp.h" />
+    <ClInclude Include="..\src\game_logic\inputs\inputs.h" />
+    <ClInclude Include="..\src\game_manager\gameManager.h" />
+    <ClInclude Include="..\src\game_manager\variables.h" />
+    <ClInclude Include="..\src\scenes\end_screen\endScreen.h" />
+    <ClInclude Include="..\src\scenes\game\game.h" />
+    <ClInclude Include="..\src\scenes\main _menu\mainMenu.h" />
+    <ClInclude Include="..\src\scenes\pause_menu\pauseMenu.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{BA6948AB-FAAC-443B-ACC3-64E71E7B658E}</ProjectGuid>
@@ -83,7 +117,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)lib\raylib-2.5.0-Win32-msvc15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\src;$(SolutionDir)lib\raylib-2.5.0-Win32-msvc15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>GRAPHICS_API_OPENGL_32;PLATFORM_DESKTOP;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <CompileAs>Default</CompileAs>
     </ClCompile>
@@ -113,7 +147,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)lib\raylib-2.5.0-Win32-msvc15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\src;$(SolutionDir)lib\raylib-2.5.0-Win32-msvc15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>GRAPHICS_API_OPENGL_32;PLATFORM_DESKTOP;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <CompileAs>Default</CompileAs>
     </ClCompile>
@@ -144,38 +178,6 @@
       <EntryPointSymbol>mainCRTSartup</EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="Audio.cpp" />
-    <ClCompile Include="Balls.cpp" />
-    <ClCompile Include="Barriers.cpp" />
-    <ClCompile Include="changeColor.cpp" />
-    <ClCompile Include="collisions.cpp" />
-    <ClCompile Include="Drawing.cpp" />
-    <ClCompile Include="endScreen.cpp" />
-    <ClCompile Include="game.cpp" />
-    <ClCompile Include="gameManager.cpp" />
-    <ClCompile Include="getSizeUp.cpp" />
-    <ClCompile Include="inputs.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="mainMenu.cpp" />
-    <ClCompile Include="Players.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Audio.h" />
-    <ClInclude Include="Balls.h" />
-    <ClInclude Include="Barriers.h" />
-    <ClInclude Include="changeColor.h" />
-    <ClInclude Include="collisions.h" />
-    <ClInclude Include="Drawing.h" />
-    <ClInclude Include="endScreen.h" />
-    <ClInclude Include="game.h" />
-    <ClInclude Include="gameManager.h" />
-    <ClInclude Include="getSizeUp.h" />
-    <ClInclude Include="inputs.h" />
-    <ClInclude Include="mainMenu.h" />
-    <ClInclude Include="Players.h" />
-    <ClInclude Include="variables.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
