@@ -26,7 +26,7 @@ namespace IgnacioFernandezLemos {
 			}
 		}
 
-		//Draws points
+		//Draws score
 		DrawText(FormatText("%i", players[0].points), 340, 200, 50, players[0].playerColor);
 		DrawText(FormatText("%i", players[1].points), 425, 200, 50, players[1].playerColor);
 

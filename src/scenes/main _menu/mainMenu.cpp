@@ -5,8 +5,6 @@ namespace IgnacioFernandezLemos {
 
 		SetTargetFPS(60);
 
-		initAudio();
-
 		while (!WindowShouldClose())
 		{
 			BeginDrawing();
@@ -27,8 +25,9 @@ namespace IgnacioFernandezLemos {
 
 			DrawText("P to pause", GetScreenWidth() / 2 - 60, screenHeight / 2 +200, 20, LIGHTGRAY);
 
-			if (IsKeyPressed(KEY_ENTER)) game();
-
+			if (IsKeyPressed(KEY_ENTER)) {
+				game();
+			}
 			EndDrawing();
 		}
 	}

@@ -7,8 +7,11 @@
 #include <iostream>
 
 namespace IgnacioFernandezLemos {
+
 	void pauseMenu() {
+	
 		bool pause = true;
+
 		while (pause)
 		{
 			BeginDrawing();

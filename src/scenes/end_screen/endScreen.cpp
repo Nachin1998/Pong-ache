@@ -3,13 +3,19 @@
 
 namespace IgnacioFernandezLemos {
 	void endScreen() {
+		float timePlayed;
 
-		PlayMusicStream(endScreenMusic); //Wont load
-		
+		PlayMusicStream(endScreenMusic);
+		SetMusicLoopCount(endScreenMusic, 0);
+
 		while (!WindowShouldClose())
 		{
 
-			//UpdateSound(endScreenMusic); //Wont load
+			UpdateMusicStream(endScreenMusic);
+
+			timePlayed = GetMusicTimePlayed(endScreenMusic) / GetMusicTimeLength(endScreenMusic);
+
+			if (timePlayed > 1) StopMusicStream(endScreenMusic);
 
 			BeginDrawing();
 			ClearBackground(WHITE);
@@ -35,6 +41,7 @@ namespace IgnacioFernandezLemos {
 			if (IsKeyPressed(KEY_ENTER)) {
 				players[0].points = 0;
 				players[1].points = 0;
+				closeAudio();
 				game();
 			}
 			EndDrawing();

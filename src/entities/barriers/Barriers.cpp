@@ -4,6 +4,7 @@
 #include "game_manager/variables.h"
 
 namespace IgnacioFernandezLemos {
+
 	Barrier barriers[barrierMax];
 
 	void setBarrierParameters() {

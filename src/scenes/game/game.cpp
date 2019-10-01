@@ -5,6 +5,7 @@
 namespace IgnacioFernandezLemos {
 	void game() {
 
+		initAudio();
 		PlayMusicStream(gameMusic);
 
 		Color background = BLACK;

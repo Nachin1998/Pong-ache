@@ -2,7 +2,7 @@
 
 namespace IgnacioFernandezLemos {
 	void play() {
-		InitWindow(screenWidth, screenHeight, "Pongacho");
+		InitWindow(screenWidth, screenHeight, "Pwong");
 		update();
 		CloseWindow();
 	}

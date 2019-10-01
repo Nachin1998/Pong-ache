@@ -6,7 +6,7 @@ namespace IgnacioFernandezLemos {
 	const float masterVolume = 30.0f;
 
 	extern Music gameMusic;
-	extern Music endScreenMusic; //Wont load, maybe the file is too short?
+	extern Music endScreenMusic;
 
 	void initAudio();
 	void closeAudio();

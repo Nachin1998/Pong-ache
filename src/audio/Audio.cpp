@@ -1,6 +1,7 @@
 #include "Audio.h"
 
 namespace IgnacioFernandezLemos {
+
 	Music gameMusic;
 	Music endScreenMusic;
 
@@ -8,7 +9,7 @@ namespace IgnacioFernandezLemos {
 		InitAudioDevice();
 		SetMasterVolume(masterVolume);
 		gameMusic = LoadMusicStream("Music/Megalovania.ogg");
-		endScreenMusic = LoadMusicStream("Music/EndScreenSong.wav");
+		endScreenMusic = LoadMusicStream("Music/EndScreenSong.ogg");
 	}
 
 	void closeAudio() {
